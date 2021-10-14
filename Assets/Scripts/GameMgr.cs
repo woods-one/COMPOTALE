@@ -10,6 +10,8 @@ public class GameMgr : MonoBehaviour
     AudioSource audioSource;
     bool flag2 = false;
     GameObject enemyBox;
+    GameObject bomb;
+    GameObject aim;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,7 +22,9 @@ public class GameMgr : MonoBehaviour
             if (flag2 == false)
             {           
                 enemyBox = GameObject.Find("EnemyBox");
+                aim = GameObject.Find("Aim");
                 enemyBox.SetActive(false);
+                aim.SetActive(false);
                 audioSource.PlayOneShot(sound3);
                 flag2 = true;
             }
@@ -52,8 +56,9 @@ public class GameMgr : MonoBehaviour
         {
             if (flag2 == false)
             {
-                enemyBox = GameObject.Find("Bomb");
-                enemyBox.SetActive(false);
+                bomb = GameObject.Find("Bomb");
+                aim = GameObject.Find("Aim");
+                bomb.SetActive(false);
                 audioSource.PlayOneShot(sound2);
                 flag2 = true;
             }
