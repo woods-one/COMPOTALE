@@ -7,7 +7,7 @@ public class TitleMgr : MonoBehaviour
     void OnGUI()
     {
         // �t�H���g�T�C�Yが
-        Util.SetFontSize(32);
+        Util.SetFontSize(50);
         // ��������
         Util.SetFontAlignment(TextAnchor.MiddleCenter);
 

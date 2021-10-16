@@ -18,7 +18,7 @@ public class GameMgr : MonoBehaviour
     }
     public void OnGUI()
     {
-        if(Bomb.gameover == 1){
+        /*if(Bomb.gameover == 1){
             if (!flag2)
             {           
                 enemyBox = GameObject.Find("EnemyBox");
@@ -50,7 +50,7 @@ public class GameMgr : MonoBehaviour
                 // �^�C�g����ʂɂ��ǂ�
                 SceneManager.LoadScene("Title");
             }
-        }
+        }*/
         
         if(Enemy.Count == 0)
         {

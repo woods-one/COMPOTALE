@@ -45,6 +45,11 @@
      <Compile Include="Assets\Scripts\Bomb.cs" />
      <Compile Include="Assets\Scripts\TitleMgr.cs" />
      <Compile Include="Assets\Scripts\Util.cs" />
+     <Compile Include="Assets\Scripts\CountText.cs" />
+     <Compile Include="Assets\Scripts\SpdChange1.cs" />
+     <Compile Include="Assets\Scripts\SpdChange2.cs" />
+     <Compile Include="Assets\Scripts\SpdChange3.cs" />
+     <Compile Include="Assets\Scripts\SpdChange4.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Users/884/Downloads/2020.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
