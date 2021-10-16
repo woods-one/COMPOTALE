@@ -1,39 +1,46 @@
 using UnityEngine;
 using System.Collections;
 
-/// ƒp[ƒeƒBƒNƒ‹
+/// ï¿½pï¿½[ï¿½eï¿½Bï¿½Nï¿½ï¿½
 public class Particle : Token
 {
 
     static GameObject _prefab = null;
-    /// ƒp[ƒeƒBƒNƒ‹‚Ì¶¬
-    public static Particle Add(float x, float y)
+    static GameObject _prefab2 = null;
+    /// ï¿½pï¿½[ï¿½eï¿½Bï¿½Nï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
+    public static Particle Add(float x, float y, float z)
     {
-        // ƒvƒŒƒnƒu‚ğæ“¾
-        _prefab = GetPrefab(_prefab, "Particle");
-        // ƒvƒŒƒnƒu‚©‚çƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬
-        return CreateInstance2<Particle>(_prefab, x, y);
+        //Debug.Log(z);
+        if(z == 1){
+            _prefab = GetPrefab(_prefab, "Particle");
+            return CreateInstance2<Particle>(_prefab, x, y);
+        }
+        else if(z == 2){
+            _prefab2 = GetPrefab(_prefab2, "Particle2");
+            return CreateInstance2<Particle>(_prefab2, x, y);
+        }
+        return null;
     }
-    /// ŠJnBƒRƒ‹[ƒ`ƒ“‚Åˆ—‚ğs‚¤
+    /// ï¿½Jï¿½nï¿½Bï¿½Rï¿½ï¿½ï¿½[ï¿½`ï¿½ï¿½ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½
     IEnumerator Start()
     {
-        // ˆÚ“®•ûŒü‚Æ‘¬‚³‚ğƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é
+        // ï¿½Ú“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ÉŒï¿½ï¿½ß‚ï¿½
         float dir = Random.Range(0, 359);
         float spd = Random.Range(10.0f, 20.0f);
         SetVelocity(dir, spd);
 
-        // Œ©‚¦‚È‚­‚È‚é‚Ü‚Å¬‚³‚­‚·‚é
+        // ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½È‚ï¿½Ü‚Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         while (ScaleX > 0.01f)
         {
-            // 0.01•bƒQ[ƒ€ƒ‹[ƒv‚É§Œä‚ğ•Ô‚·
+            // 0.01ï¿½bï¿½Qï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½vï¿½Éï¿½ï¿½ï¿½ï¿½Ô‚ï¿½
             yield return new WaitForSeconds(0.01f);
-            // ‚¾‚ñ‚¾‚ñ¬‚³‚­‚·‚é
+            // ï¿½ï¿½ï¿½ñ‚¾‚ñ¬‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             MulScale(0.9f);
-            // ‚¾‚ñ‚¾‚ñŒ¸‘¬‚·‚é
+            // ï¿½ï¿½ï¿½ñ‚¾‚ñŒ¸‘ï¿½ï¿½ï¿½ï¿½ï¿½
             MulVelocity(0.9f);
         }
 
-        // Á–Å
+        // ï¿½ï¿½ï¿½ï¿½
         DestroyObj();
     }
 }

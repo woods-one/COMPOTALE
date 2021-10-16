@@ -4,23 +4,25 @@ using System.Collections;
 /// �G
 public class Enemy : Token
 {
-    public static int Count = 0;
+    public static int Count;
     public static int Count2 = 0;
     public AudioClip sound1;
     AudioSource audioSource;
     bool flag = true;
+    public float spd;
+    public float dir;
     /// �J�n
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        Count++;
-        Count2 = Count - 1;
+        Count = 1;
+        Count2 = Count + 1;
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
         // �����_���ȕ����Ɉړ�����
         // �����������_���Ɍ��߂�
-        float dir = Random.Range(0, 359);
+        dir = Random.Range(0, 359);
         // ������2
-        float spd = 7;
+        spd = 7;
         SetVelocity(dir, spd);
     }
     void Update()
@@ -44,30 +46,36 @@ public class Enemy : Token
             // ��ʓ��Ɉړ�����
             ClampScreen();
         }
-        if (Enemy.Count == Enemy.Count2 && flag == true)
+        if (Enemy.Count == Enemy.Count2 && flag!)
         {
             audioSource.PlayOneShot(sound1);
             flag = false;
-            Enemy.Count2--;
+            Enemy.Count2++;
         }
-        else if (Enemy.Count == Enemy.Count2 && flag == false)
+        else if (Enemy.Count == Enemy.Count2 && !flag)
         {
             audioSource.PlayOneShot(sound1);
             flag = true;
-            Enemy.Count2--;
+            Enemy.Count2++;
         }
     }
     public void OnMouseDown()
     {
 
         // �p�[�e�B�N���𐶐�
-        Count--;
+        Count++;
         for (int i = 0; i < 32; i++)
         {
-            Particle.Add(X, Y);
+        Particle.Add(X, Y, 1);
+        int probability = Random.Range(1, 5);
+        if(probability < 2)spd += 2;
+        else if(probability > 4 )spd -= 1;
+        if(spd < 1)spd = 1;
+        else if(spd > 15)spd = 15;
+        dir = Random.Range(0, 359);
+        SetVelocity(dir, spd);
+        Debug.Log(Count - 1);
         }
-        // �j����
-        DestroyObj();
     }
 
 }

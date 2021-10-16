@@ -19,7 +19,7 @@ public class GameMgr : MonoBehaviour
     public void OnGUI()
     {
         if(Bomb.gameover == 1){
-            if (flag2 == false)
+            if (!flag2)
             {           
                 enemyBox = GameObject.Find("EnemyBox");
                 aim = GameObject.Find("Aim");
@@ -54,10 +54,12 @@ public class GameMgr : MonoBehaviour
         
         if(Enemy.Count == 0)
         {
-            if (flag2 == false)
+            if (!flag2)
             {
+                enemyBox = GameObject.Find("EnemyBox");
                 bomb = GameObject.Find("Bomb");
                 aim = GameObject.Find("Aim");
+                enemyBox.SetActive(false);
                 bomb.SetActive(false);
                 audioSource.PlayOneShot(sound2);
                 flag2 = true;

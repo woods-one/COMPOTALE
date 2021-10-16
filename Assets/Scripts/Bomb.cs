@@ -46,10 +46,9 @@ public class Bomb : Token
         // �p�[�e�B�N���𐶐�
         for (int i = 0; i < 32; i++)
         {
-            Particle.Add(X, Y);
+            Particle.Add(X, Y, 2);
         }
         /*enemyBox.SetActive(false);*/
         // �j����
-        DestroyObj();
     }
 }
