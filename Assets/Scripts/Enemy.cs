@@ -24,7 +24,7 @@ public class Enemy : Token
         // �����������_���Ɍ��߂�
         dir = Random.Range(0, 359);
         // ������2
-        spd = 7;
+        spd = 15;
         SetVelocity(dir, spd);
     }
     void Update()

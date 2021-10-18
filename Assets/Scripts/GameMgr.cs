@@ -52,7 +52,7 @@ public class GameMgr : MonoBehaviour
             }
         }*/
         
-        if(Enemy.Count == 0)
+        if(Timer.countTime <= 0)
         {
             if (!flag2)
             {
@@ -61,6 +61,7 @@ public class GameMgr : MonoBehaviour
                 aim = GameObject.Find("Aim");
                 enemyBox.SetActive(false);
                 bomb.SetActive(false);
+                aim.SetActive(false);
                 audioSource.PlayOneShot(sound2);
                 flag2 = true;
             }

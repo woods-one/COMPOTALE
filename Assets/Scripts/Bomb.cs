@@ -73,7 +73,7 @@ public class Bomb : Token
         gameover2 = 1;
         gameover3 = 1;
         gameover4 = 1;
-        Enemy.spd = 7;
+        Enemy.spd = 6;
         Enemy.scr--;
         sflag++;
         if(Enemy.scr < 0)Enemy.scr = 0;
