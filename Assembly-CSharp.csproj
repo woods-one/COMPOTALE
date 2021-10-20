@@ -45,6 +45,7 @@
      <Compile Include="Assets\Scripts\MouseScript.cs" />
      <Compile Include="Assets\Scripts\Token.cs" />
      <Compile Include="Assets\Scripts\UITextGradient.cs" />
+     <Compile Include="Assets\Scripts\URL.cs" />
      <Compile Include="Assets\Scripts\BgmStop.cs" />
      <Compile Include="Assets\Scripts\UICornersGradient.cs" />
      <Compile Include="Assets\Scripts\GameMgr.cs" />
@@ -57,7 +58,8 @@
      <Compile Include="Assets\Scripts\TitleMgr.cs" />
      <Compile Include="Assets\Scripts\Util.cs" />
      <Compile Include="Assets\Scripts\SetDirty.cs" />
-     <Compile Include="Assets\Scripts\URL.cs" />
+     <Compile Include="Assets\Scripts\ClearMessage.cs" />
+     <Compile Include="Assets\Scripts\deleteadvertisement.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Users/884/Downloads/2020.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

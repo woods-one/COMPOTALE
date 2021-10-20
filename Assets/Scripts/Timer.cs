@@ -14,7 +14,6 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // countTimeに、ゲームが開始してからの秒数を格納
         countTime -= Time.deltaTime;
         if(countTime <= 0)countTime = 0;
         // 小数2桁にして表示
