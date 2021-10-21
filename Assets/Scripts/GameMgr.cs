@@ -17,41 +17,7 @@ public class GameMgr : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
     public void OnGUI()
-    {
-        /*if(Bomb.gameover == 1){
-            if (!flag2)
-            {           
-                enemyBox = GameObject.Find("EnemyBox");
-                aim = GameObject.Find("Aim");
-                enemyBox.SetActive(false);
-                aim.SetActive(false);
-                audioSource.PlayOneShot(sound3);
-                flag2 = true;
-            }
-
-             // �G���S�ł���
-            // �t�H���g�T�C�Y�ݒ�
-            Util.SetFontSize(32);
-            // ��������
-            Util.SetFontAlignment(TextAnchor.MiddleCenter);
-            // �t�H���g�̈ʒu
-            float w = 128; // ��
-            float h = 32; // ����
-            float px = Screen.width / 2 - w / 2;
-            float py = Screen.height / 2 - h / 2;
-
-            // �t�H���g�`��
-            Util.GUILabel(px, py, w, h, "Game Over!");
-            // ����������ǉ�
-            // �{�^���͏������ɂ��炷
-            py += 60;
-            if (GUI.Button(new Rect(px, py, w, h), "Back to Title"))
-            {
-                // �^�C�g����ʂɂ��ǂ�
-                SceneManager.LoadScene("Title");
-            }
-        }*/
-        
+    {        
         if(Timer.countTime <= 0)
         {
             if (!flag2)
@@ -65,27 +31,11 @@ public class GameMgr : MonoBehaviour
                 audioSource.PlayOneShot(sound2);
                 flag2 = true;
             }
-            // �G���S�ł���
-            // �t�H���g�T�C�Y�ݒ�
-            Util.SetFontSize(32);
-            // ��������
-            Util.SetFontAlignment(TextAnchor.MiddleCenter);
-            // �t�H���g�̈ʒu
-            float w = 128; // ��
-            float h = 32; // ����
-            float px = Screen.width / 2 - w / 2;
-            float py = Screen.height / 2 - h / 2;
-
-            // �t�H���g�`��
-            Util.GUILabel(px, py, w, h, "Game Clear!");
-            // ����������ǉ�
-            // �{�^���͏������ɂ��炷
-            py += 60;
-            if (GUI.Button(new Rect(px, py, w, h), "Back to Title"))
-            {
-                // �^�C�g����ʂɂ��ǂ�
-                SceneManager.LoadScene("Title");
-            }
+            ClearRoot(Bomb.bombCount, Enemy.Count);
         }
+    }
+    public void ClearRoot(int x, int y)
+    {
+       if(x == 0 && y == 1)SceneManager.LoadScene("Proot");
     }
 }

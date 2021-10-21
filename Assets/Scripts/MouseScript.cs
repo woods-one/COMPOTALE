@@ -12,7 +12,7 @@ public class MouseScript : MonoBehaviour
         this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 a = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         transform.position = Camera.main.ScreenToWorldPoint(a);
-        if (Enemy.Count == 0)
+        if (Timer.countTime <= 0)
         {
             this.gameObject.SetActive(false);
         }

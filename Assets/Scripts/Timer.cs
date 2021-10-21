@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        countTime = 60;
+        countTime = 10;
     }
 
     // Update is called once per frame

@@ -13,6 +13,7 @@ public class Bomb : Token
     public static int gameover2;
     public static int gameover3;
     public static int gameover4;
+    public static int bombCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class Bomb : Token
         gameover2 = 0;
         gameover3 = 0;
         gameover4 = 0;
+        bombCount = 0;
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
         // �����_���ȕ����Ɉړ�����
         // �����������_���Ɍ��߂�
@@ -76,6 +78,7 @@ public class Bomb : Token
         Enemy.spd = 6;
         Enemy.scr--;
         sflag++;
+        bombCount++;
         if(Enemy.scr < 0)Enemy.scr = 0;
         // �p�[�e�B�N���𐶐�
         for (int i = 0; i < 32; i++)
