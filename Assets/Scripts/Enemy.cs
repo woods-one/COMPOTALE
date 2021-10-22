@@ -17,7 +17,7 @@ public class Enemy : Token
     {
         audioSource = GetComponent<AudioSource>();
         scr = 0;
-        Count = 1;
+        Count = 0;
         Count2 = Count + 1;
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
         // �����_���ȕ����Ɉړ�����

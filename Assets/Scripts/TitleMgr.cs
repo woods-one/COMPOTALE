@@ -18,7 +18,7 @@ public class TitleMgr : MonoBehaviour
         float py = Screen.height / 2 - h / 2;
 
         // �t�H���g�`��
-        Util.GUILabel(px, py, w, h, "COMPOTALE");
+        Util.GUILabel(px, py, w, h, "COMPOTALE!!!");
 
         // �{�^���͏������ɂ��炷
         py += 60;
