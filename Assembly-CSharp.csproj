@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BgmStop.cs" />
      <Compile Include="Assets\Scripts\UICornersGradient.cs" />
      <Compile Include="Assets\Scripts\GameMgr.cs" />
+     <Compile Include="Assets\Scripts\Exit.cs" />
      <Compile Include="Assets\Scripts\Deleteadvertisement.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\UIGradientUtils.cs" />
@@ -57,10 +58,10 @@
      <Compile Include="Assets\Scripts\SpdChange2.cs" />
      <Compile Include="Assets\Scripts\UITextCornersGradient.cs" />
      <Compile Include="Assets\Scripts\ClearMessage.cs" />
+     <Compile Include="Assets\Scripts\EnterBackTitle.cs" />
      <Compile Include="Assets\Scripts\TitleMgr.cs" />
      <Compile Include="Assets\Scripts\Util.cs" />
      <Compile Include="Assets\Scripts\SetDirty.cs" />
-     <Compile Include="Assets\Scripts\EnterBackTitle.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Users/884/Downloads/2020.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

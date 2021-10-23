@@ -10,7 +10,6 @@ public class Particle : Token
     /// �p�[�e�B�N���̐���
     public static Particle Add(float x, float y, float z)
     {
-        //Debug.Log(z);
         if(z == 1){
             _prefab = GetPrefab(_prefab, "Particle");
             return CreateInstance2<Particle>(_prefab, x, y);

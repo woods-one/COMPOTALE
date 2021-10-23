@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Deleteadvertisement : Token
 {
-    GameObject kosenadvertisement;
+    public string adver;
+    public string Batu;
+    GameObject advertisement;
     GameObject batu;
     void Start()
     {
-        kosenadvertisement = GameObject.Find("kosenadvertisement");
-        batu = GameObject.Find("batu");
+        advertisement = GameObject.Find(adver);
+        batu = GameObject.Find(Batu);
     }
     public void OnMouseDown()
     {
-       kosenadvertisement.SetActive(false);
+       advertisement.SetActive(false);
        batu.SetActive(false);
     }
 }

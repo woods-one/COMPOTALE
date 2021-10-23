@@ -11,22 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: bdda8fd0656657d4abaad83619841501
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Proot.unity
     guid: baddf3457f92f1145aa1c83a1efda716
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Broot.unity
     guid: 182f469b9043a4c46be6eb10fd148bb2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Troot.unity
     guid: bde380ca36abb4a4582315647eae1f19
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Groot.unity
     guid: 36793448c68568d4082ce69665096d60
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nroot.unity
     guid: 8a8f43bd2b41d5248aa7abdf18d0c921
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Croot.unity
     guid: c853e829449ca2543a58789b661d68f8
   m_configObjects: {}

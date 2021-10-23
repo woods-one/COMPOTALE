@@ -54,11 +54,12 @@ public class GameMgr : MonoBehaviour
     }
     public void ClearRoot(int x, int y)
     {
-       if(x == 0 && y == 0)SceneManager.LoadScene("Proot");
+       /*if(x == 0 && y == 0)SceneManager.LoadScene("Proot");
        else if(x == 0 && 30 <= y)SceneManager.LoadScene("Troot");
        else if(0 < x && 30 <= y)SceneManager.LoadScene("Groot");
        else if(x == 0 && y < 30)SceneManager.LoadScene("Nroot");
        else if(0 < x && y < 30)SceneManager.LoadScene("Croot");
-       else if(0 < x && y == 0)SceneManager.LoadScene("Broot");
+       else if(0 < x && y == 0)SceneManager.LoadScene("Broot");*/
+       SceneManager.LoadScene("Title");
     }
 }
