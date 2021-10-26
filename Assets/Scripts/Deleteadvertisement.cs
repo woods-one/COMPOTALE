@@ -12,10 +12,10 @@ public class Deleteadvertisement : Token
     {
         advertisement = GameObject.Find(adver);
         batu = GameObject.Find(Batu);
-    }
+    } 
     public void OnMouseDown()
     {
-       advertisement.SetActive(false);
-       batu.SetActive(false);
+        batu.SetActive(false);
+        advertisement.SetActive(false); 
     }
 }

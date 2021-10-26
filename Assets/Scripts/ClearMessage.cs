@@ -17,7 +17,7 @@ public class ClearMessage : MonoBehaviour
       cleartext = "";
     }
 
-    void Update()
+    void FixedUpdate()
     {
         cleartime = Time.deltaTime;
         cleartime2 = (int)Mathf.Floor(cleartime);

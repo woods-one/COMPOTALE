@@ -9,7 +9,7 @@ public class Bomb : Token
     int sflag;
     int sflag2;
     bool flag = true;
-    public static int gameover;
+    public static int gameover1;
     public static int gameover2;
     public static int gameover3;
     public static int gameover4;
@@ -20,7 +20,7 @@ public class Bomb : Token
         audioSource = GetComponent<AudioSource>();
         sflag = 0;
         sflag2 = 1;
-        gameover = 0;
+        gameover1 = 0;
         gameover2 = 0;
         gameover3 = 0;
         gameover4 = 0;
@@ -71,7 +71,7 @@ public class Bomb : Token
     }
     public void OnMouseDown()
     {
-        gameover = 1;
+        gameover1 = 1;
         gameover2 = 1;
         gameover3 = 1;
         gameover4 = 1;
