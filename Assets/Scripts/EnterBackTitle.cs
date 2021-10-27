@@ -9,6 +9,7 @@ public class EnterBackTitle : MonoBehaviour
     {
         if(Input.GetKeyDown("return")) {
             SceneManager.LoadScene("Title");
+            GameMgr.SubmitScore(Enemy.scr);
         }
     }
 }

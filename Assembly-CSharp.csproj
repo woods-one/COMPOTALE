@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\TitleMgr.cs" />
      <Compile Include="Assets\Scripts\Util.cs" />
      <Compile Include="Assets\Scripts\SetDirty.cs" />
+     <Compile Include="Assets\Scripts\InputFieldManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Users/884/Downloads/2020.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -709,13 +710,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="PlayFabEditorExtensions.csproj">
-      <Project>{5e6277ee-25f5-6cf6-bdec-97d9d7ff6fb4}</Project>
-      <Name>PlayFabEditorExtensions</Name>
-    </ProjectReference>
     <ProjectReference Include="PlayFabSDKEditor.csproj">
       <Project>{8b894bed-93d5-b5bb-19cf-d21202952a73}</Project>
       <Name>PlayFabSDKEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="PlayFabEditorExtensions.csproj">
+      <Project>{5e6277ee-25f5-6cf6-bdec-97d9d7ff6fb4}</Project>
+      <Name>PlayFabEditorExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="PlayFab.csproj">
       <Project>{cc37018a-7358-5740-16ee-5fffc08bbbce}</Project>
