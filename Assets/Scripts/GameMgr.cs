@@ -17,7 +17,6 @@ public class GameMgr : MonoBehaviour
     GameObject bomb;
     GameObject aim;
     GameObject nick;
-    GameObject num;
     GameObject scoDis;
     GameObject logMas;
     GameObject score;
@@ -28,12 +27,10 @@ public class GameMgr : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         nick = GameObject.Find("Nickname");
-        num = GameObject.Find("Number");
         scoDis = GameObject.Find("ScoreDisplay");
         logMas = GameObject.Find("LoginMassage");
         butMgr = GameObject.Find("ButtonMgr");
         nick.SetActive(false);
-        num.SetActive(false);
         scoDis.SetActive(false);
         logMas.SetActive(false);
         butMgr.SetActive(false);
@@ -41,7 +38,6 @@ public class GameMgr : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown("return") && InputFieldManager.flag4) {
-            flag3 = true;
             UserLogin(InputFieldManager.userName);
         }
     }
@@ -62,7 +58,6 @@ public class GameMgr : MonoBehaviour
                 score.SetActive(false);
                 time.SetActive(false);
                 nick.SetActive(true);
-                num.SetActive(true);
                 scoDis.SetActive(true);
                 logMas.SetActive(true);
                 butMgr.SetActive(true);
@@ -91,14 +86,15 @@ public class GameMgr : MonoBehaviour
         new LoginWithCustomIDRequest { CustomId = usename, CreateAccount = true},
             result => 
             {
+                
                 Debug.Log("ログイン成功！");
                 SetPlayerDisplayName(usename);
                 flag5 = true;
+                flag3 = true;
             },
             error => 
             {
                 Debug.Log("ログイン失敗");
-                UserLogin(InputFieldManager.userName);
             }
         );
     }

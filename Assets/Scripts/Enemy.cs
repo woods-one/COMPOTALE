@@ -64,8 +64,12 @@ public class Enemy : Token
     public void OnMouseDown()
     {
 
-        // �p�[�e�B�N���𐶐�
-        scr++;
+        int scrRandom = Random.Range(1,15);
+        if(scrRandom < 6)scr += 10;
+        else if(5 < scrRandom && scrRandom < 11)scr += 20;
+        else if(10 < scrRandom && scrRandom < 13)scr += 30;
+        else if(12 < scrRandom && scrRandom < 15)scr += 40;
+        else scr += 100;
         Count++;
         for (int i = 0; i < 32; i++)
         {
