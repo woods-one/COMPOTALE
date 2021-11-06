@@ -1,16 +1,27 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
+using QuadrantType = DirectionUtility.QuadrantType;
+using DirectionRange = DirectionUtility.DirectionRange;
 
 /// �G
 public class Enemy : Token
 {
+    /// <summary>移動方向（キャラごとにリセット時の方向範囲が決まっています）</summary>
+    private QuadrantType velocityQuadrant;
+
+    const int MaxSpd = 15;
+    const int MinSpd = 1;
+    const int DefaultSpeed = 7;
+
     public static int scr;
     public static int Count;
     public static int Count2;
     public AudioClip sound1;
     AudioSource audioSource;
     bool flag = true;
-    public static float spd;
+    private float spd;
     public static float dir;
     /// �J�n
     void Start()
@@ -24,7 +35,7 @@ public class Enemy : Token
         // �����������_���Ɍ��߂�
         dir = Random.Range(0, 359);
         // ������2
-        spd = 7;
+        spd = DefaultSpeed;
         SetVelocity(dir, spd);
     }
     void Update()
@@ -75,14 +86,39 @@ public class Enemy : Token
         {
         Particle.Add(X, Y, 1);
         }
-        int probability = Random.Range(1, 5);
-        if(probability < 2)spd += 1;
-        else if(probability > 4 )spd -= 1;
-        if(spd < 1)spd = 7;
-        else if(spd > 15)spd = 7;
+
+        // 確率で増減
+        bool shouldSpeedUP = Random.Range(0,4) == 0;
+        if(shouldSpeedUP)
+        {
+            spd += 1;
+        }
+
+        if(spd < MinSpd || spd > MaxSpd) spd = 7;
+
         dir = Random.Range(0, 359);
         
         SetVelocity(dir, spd);
+    }
+
+    /// <summary>
+    /// 象限の設定
+    /// </summary>
+    public void SetVelocityQuadrant(QuadrantType velocityQuadrant)
+    {
+        this.velocityQuadrant = velocityQuadrant;
+    }
+
+    /// <summary>
+    /// 移動方向のリセット
+    /// </summary>
+    public void ResetDirection()
+    {
+        spd = DefaultSpeed;
+
+        DirectionRange directionRange = DirectionUtility.GetDirectionRange(velocityQuadrant);
+        float angle = Random.Range(directionRange.directionStart, directionRange.directionEnd);
+        SetVelocity(angle, spd);
     }
 
 }
