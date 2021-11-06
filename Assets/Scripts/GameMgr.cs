@@ -22,7 +22,15 @@ public class GameMgr : MonoBehaviour
     GameObject score;
     GameObject time;
     GameObject butMgr;
-    public GUISkin guiSkin; 
+    public GUISkin guiSkin;
+
+    /// <summary>タップされたらいけないキャラ</summary>
+    [SerializeField]
+    private Bomb bombCharacter;
+
+    [SerializeField]
+    private List<Enemy> characters;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -34,7 +42,43 @@ public class GameMgr : MonoBehaviour
         scoDis.SetActive(false);
         logMas.SetActive(false);
         butMgr.SetActive(false);
+
+        SetupCharacters();
     }
+
+    /// <summary>
+    /// キャラクターのセットアップ
+    /// </summary>
+    private void SetupCharacters()
+    {
+        bombCharacter.RegisterOnclickCallback(OnClickBombCharacter);
+
+        for (int i = 0; i < characters.Count; i++)
+        {
+            characters[i].SetVelocityQuadrant(DirectionUtility.ConvertIntToQuadrantType(i+1));
+        }
+    }
+
+    /// <summary>
+    /// クリックしてはいけないキャラがクリックされた時の処理
+    /// </summary>
+    private void OnClickBombCharacter()
+    {
+        // クリックされた時の処理
+        ResetCharactersVelocity();
+    }
+
+    /// <summary>
+    /// 各キャラクターの移動速度のリセット
+    /// </summary>
+    private void ResetCharactersVelocity()
+    {
+        for(int i = 0; i < characters.Count; i++)
+        {
+            characters[i].ResetDirection();
+        }
+    }
+
     void Update()
     {
         if(Input.GetKeyDown("return") && InputFieldManager.flag4) {
