@@ -99,6 +99,4 @@ public class Bomb : Token
     {
         this.onClick = onClick;
     }
-
-
 }

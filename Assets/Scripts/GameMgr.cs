@@ -31,9 +31,6 @@ public class GameMgr : MonoBehaviour
     [SerializeField]
     private List<Enemy> characters;
 
-
-
-
     void Start()
     {
         audioSource = GetComponent<AudioSource>();

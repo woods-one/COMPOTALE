@@ -120,5 +120,4 @@ public class Enemy : Token
         float angle = Random.Range(directionRange.directionStart, directionRange.directionEnd);
         SetVelocity(angle, spd);
     }
-
 }
