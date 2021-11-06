@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Exit : MonoBehaviour
+public class RankingTransition : MonoBehaviour
 {
     public void OnMouseDown()
     {
-       Application.Quit();
+       SceneManager.LoadScene("Ranking");
     }
 }

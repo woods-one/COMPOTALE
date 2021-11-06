@@ -21,7 +21,7 @@ public class GameMgr : MonoBehaviour
     GameObject logMas;
     GameObject score;
     GameObject time;
-    GameObject butMgr;
+    GameObject send;
     public GUISkin guiSkin; 
     void Start()
     {
@@ -29,11 +29,11 @@ public class GameMgr : MonoBehaviour
         nick = GameObject.Find("Nickname");
         scoDis = GameObject.Find("ScoreDisplay");
         logMas = GameObject.Find("LoginMassage");
-        butMgr = GameObject.Find("ButtonMgr");
+        send = GameObject.Find("SendBotton");
         nick.SetActive(false);
         scoDis.SetActive(false);
         logMas.SetActive(false);
-        butMgr.SetActive(false);
+        send.SetActive(false);
     }
     void Update()
     {
@@ -60,7 +60,7 @@ public class GameMgr : MonoBehaviour
                 nick.SetActive(true);
                 scoDis.SetActive(true);
                 logMas.SetActive(true);
-                butMgr.SetActive(true);
+                send.SetActive(true);
                 audioSource.PlayOneShot(sound2);
                 flag2 = true;
             
@@ -73,11 +73,13 @@ public class GameMgr : MonoBehaviour
     }
     public static void ClearRoot(int x, int y)
     {
+        Debug.Log(x);
+        Debug.Log(y);
        if(x == 0 && y == 0)SceneManager.LoadScene("Proot");
        else if(x == 0 && 35 <= y)SceneManager.LoadScene("Troot");
        else if(0 < x && 50 <= y)SceneManager.LoadScene("Groot");
        else if(x == 0 && y < 35)SceneManager.LoadScene("Nroot");
-       else if(0 < x && y < 50)SceneManager.LoadScene("Croot");
+       else if(0 < x && y < 50 && y != 0)SceneManager.LoadScene("Croot");
        else if(0 < x && y == 0)SceneManager.LoadScene("Broot");
     }
     public void UserLogin(string usename)

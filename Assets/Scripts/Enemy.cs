@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-/// �G
 public class Enemy : Token
 {
     public static int scr;
@@ -12,7 +11,6 @@ public class Enemy : Token
     bool flag = true;
     public static float spd;
     public static float dir;
-    /// �J�n
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,32 +18,23 @@ public class Enemy : Token
         Count = 0;
         Count2 = Count + 1;
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
-        // �����_���ȕ����Ɉړ�����
-        // �����������_���Ɍ��߂�
         dir = Random.Range(0, 359);
-        // ������2
         spd = 7;
         SetVelocity(dir, spd);
     }
     void Update()
     {
-        // �J�����̍������W���擾
         Vector2 min = GetWorldMin();
-        // �J�����̉E����W���擾����
         Vector2 max = GetWorldMax();
 
         if (X < min.x || max.x < X)
         {
-            // ��ʊO�ɏo���̂ŁAX�ړ��ʂ𔽓]����
             VX *= -1;
-            // ��ʓ��Ɉړ�����
             ClampScreen();
         }
         if (Y < min.y || max.y < Y)
         {
-            // ��ʊO�ɏo���̂ŁAY�ړ��ʂ𔽓]����
             VY *= -1;
-            // ��ʓ��Ɉړ�����
             ClampScreen();
         }
         if (Count == Count2 && flag)

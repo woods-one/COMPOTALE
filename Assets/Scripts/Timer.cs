@@ -11,12 +11,10 @@ public class Timer : MonoBehaviour
         countTime = 60;
     }
 
-    // Update is called once per frame
     void Update()
     {
         countTime -= Time.deltaTime;
         if(countTime <= 0)countTime = 0;
-        // 小数2桁にして表示
         GetComponent<Text>().text = "Time: " + countTime.ToString("F2");
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpdChange2 : Token
 {
-    // Start is called before the first frame update
     void Update()
     {
         if(Bomb.gameover2 == 1){

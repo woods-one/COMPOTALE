@@ -1,13 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-/// �p�[�e�B�N��
 public class Particle : Token
 {
 
     static GameObject _prefab = null;
     static GameObject _prefab2 = null;
-    /// �p�[�e�B�N���̐���
     public static Particle Add(float x, float y, float z)
     {
         if(z == 1){
@@ -20,26 +18,18 @@ public class Particle : Token
         }
         return null;
     }
-    /// �J�n�B�R���[�`���ŏ������s��
     IEnumerator Start()
     {
-        // �ړ������Ƒ����������_���Ɍ��߂�
         float dir = Random.Range(0, 359);
         float spd = Random.Range(10.0f, 20.0f);
         SetVelocity(dir, spd);
 
-        // �����Ȃ��Ȃ�܂ŏ���������
         while (ScaleX > 0.01f)
         {
-            // 0.01�b�Q�[�����[�v�ɐ����Ԃ�
             yield return new WaitForSeconds(0.01f);
-            // ���񂾂񏬂�������
             MulScale(0.9f);
-            // ���񂾂񌸑�����
             MulVelocity(0.9f);
         }
-
-        // ����
         DestroyObj();
     }
 }

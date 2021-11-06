@@ -6,7 +6,6 @@ public class MouseScript : MonoBehaviour
 
     Vector3 screenPoint;
 
-    // Update is called once per frame
     void Update()
     {
         this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
