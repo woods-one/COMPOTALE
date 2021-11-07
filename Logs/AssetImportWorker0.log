@@ -1985,3 +1985,32 @@ Received Import Request.
 Start importing Assets/Scenes/Title.unity using Guid(100ab03a1ff4d33448543b5ec7bff37a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de110b12f15fc39960c8f2c45aa01439') in 0.355285 seconds
   Import took 0.479744 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 379.276387 seconds.
+  path: Assets/Scripts/MainButton.cs
+  artifactKey: Guid(886e953998b14764c80e0f921589dd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MainButton.cs using Guid(886e953998b14764c80e0f921589dd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '444609edc2705f431531696e9e53106f') in 42.436220 seconds
+  Import took 111.294551 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.913763 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 10.730 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1949 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 98.5 MB.
+System memory in use after: 98.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2798.
+Total: 36.458000 ms (FindLiveObjects: 0.380100 ms CreateObjectMapping: 0.131500 ms MarkObjects: 35.913100 ms  DeleteObjects: 0.030800 ms)
+
