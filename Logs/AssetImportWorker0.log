@@ -1969,3 +1969,19 @@ Received Import Request.
 Start importing Assets/Scripts/Enemy.cs using Guid(485293d043259e447bba11fdb28285aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d36c299414ce2e1f07b20dd7d9bef24') in 0.020013 seconds
   Import took 0.067581 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 47207.144067 seconds.
+  path: Assets/Scenes/Main.unity
+  artifactKey: Guid(bdda8fd0656657d4abaad83619841501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main.unity using Guid(bdda8fd0656657d4abaad83619841501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49321dbc16b749aa227070cdc086eb97') in 0.171302 seconds
+  Import took 0.393941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.147284 seconds.
+  path: Assets/Scenes/Title.unity
+  artifactKey: Guid(100ab03a1ff4d33448543b5ec7bff37a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Title.unity using Guid(100ab03a1ff4d33448543b5ec7bff37a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de110b12f15fc39960c8f2c45aa01439') in 0.355285 seconds
+  Import took 0.479744 seconds .
+

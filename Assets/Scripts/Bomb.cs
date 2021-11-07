@@ -1,31 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Bomb : Token
 {
+    /// <summary>クリックされた時の処理</summary>
+    private Action onClick;
+
     public AudioClip sound4;
     AudioSource audioSource;
     int sflag;
     int sflag2;
     bool flag = true;
-    public static int gameover1;
-    public static int gameover2;
-    public static int gameover3;
-    public static int gameover4;
+
+    private bool isClickedBomb;
+
     public static int bombCount;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         sflag = 0;
         sflag2 = 1;
-        gameover1 = 0;
-        gameover2 = 0;
-        gameover3 = 0;
-        gameover4 = 0;
+
+        isClickedBomb = false;
         bombCount = 0;
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
-        float dir = Random.Range(0, 359);
+        float dir = UnityEngine.Random.Range(0, 359);
         float spd = 5;
         SetVelocity(dir, spd);
     }
@@ -58,13 +60,13 @@ public class Bomb : Token
             sflag2++;
         }
     }
+
+    /// <summary>
+    /// このキャラをクリックしたときの処理
+    /// </summary>
     public void OnMouseDown()
     {
-        gameover1 = 1;
-        gameover2 = 1;
-        gameover3 = 1;
-        gameover4 = 1;
-        Enemy.spd = 6;
+        isClickedBomb = true;
         Enemy.scr -= 50;
         sflag++;
         bombCount++;
@@ -73,5 +75,14 @@ public class Bomb : Token
         {
             Particle.Add(X, Y, 2);
         }
+        onClick.Invoke();
+    }
+
+    /// <summary>
+    /// クリックされた時の処理を登録
+    /// </summary>
+    public void RegisterOnclickCallback(Action onClick)
+    {
+        this.onClick = onClick;
     }
 }
