@@ -11,6 +11,7 @@ public class ShowRanking : MonoBehaviour {
   void Start()
   {
     RankingUserLogin();
+    Debug.Log("hoge");
   }
 
   public void GetLeaderboard() { 
@@ -29,26 +30,27 @@ public class ShowRanking : MonoBehaviour {
 
     _rankingText.text = "";
     foreach (var entry in result.Leaderboard) {
-      _rankingText.text += $"順位 : {entry.Position + 1}, スコア : {entry.StatValue}, 名前 : {entry.DisplayName}\n";
+      _rankingText.text += $"順位 : {entry.Position + 1}位  スコア : {entry.StatValue}  名前 : {entry.DisplayName}\n\n";
     }
   }
 
   private void OnGetLeaderboardFailure(PlayFabError error){
     Debug.LogError($"ランキング(リーダーボード)の取得に失敗しました\n{error.GenerateErrorReport()}");
+    _rankingText.text += "ランキングの取得に失敗しました\nタイトルに戻って再度お試しください";
   }
-    public void RankingUserLogin()
-    {
-        PlayFabClientAPI.LoginWithCustomID(
+  public void RankingUserLogin()
+  {
+      PlayFabClientAPI.LoginWithCustomID(
         new LoginWithCustomIDRequest { CustomId = "ranker", CreateAccount = true},
-            result => 
-            {
-                
-                Debug.Log("ログイン成功！");
-            },
-            error => 
-            {
-                Debug.Log("ログイン失敗");
-            }
-        );
-    }
+          result => 
+          {
+            Debug.Log("ログイン成功！");
+            GetLeaderboard();
+          },
+          error => 
+          {
+            Debug.Log("ログイン失敗");
+          }
+      );
+  }
 }

@@ -22,7 +22,6 @@ public class GameMgr : MonoBehaviour
     GameObject score;
     GameObject time;
     GameObject send;
-    GameObject butMgr;
 
     /// <summary>タップされたらいけないキャラ</summary>
     [SerializeField]
@@ -42,7 +41,7 @@ public class GameMgr : MonoBehaviour
         scoDis.SetActive(false);
         logMas.SetActive(false);
         send.SetActive(false);
-        butMgr.SetActive(false);
+        //butMgr.SetActive(false);
 
         SetupCharacters();
     }
@@ -122,9 +121,9 @@ public class GameMgr : MonoBehaviour
         Debug.Log(y);
        if(x == 0 && y == 0)SceneManager.LoadScene("Proot");
        else if(x == 0 && 35 <= y)SceneManager.LoadScene("Troot");
-       else if(0 < x && 50 <= y)SceneManager.LoadScene("Groot");
+       else if(0 < x && 40 <= y)SceneManager.LoadScene("Groot");
        else if(x == 0 && y < 35)SceneManager.LoadScene("Nroot");
-       else if(0 < x && y < 50 && y != 0)SceneManager.LoadScene("Croot");
+       else if(0 < x && y < 40 && y != 0)SceneManager.LoadScene("Croot");
        else if(0 < x && y == 0)SceneManager.LoadScene("Broot");
     }
     public void UserLogin(string usename)

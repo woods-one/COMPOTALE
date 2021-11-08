@@ -1276,11 +1276,6 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!1 &1343710729 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3313666281643933615, guid: 2291149154cacf243892a612824b40af, type: 3}
-  m_PrefabInstance: {fileID: 201750892}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1343710732 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
@@ -2172,7 +2167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound2: {fileID: 8300000, guid: 10f471cdbfbf5854eaa0f7719dd23a3d, type: 3}
   sound3: {fileID: 8300000, guid: 47373837cfa3e9e468cc4156fa2d1da7, type: 3}
-  guiSkin: {fileID: 0}
   bombCharacter: {fileID: 1523568756}
   characters:
   - {fileID: 1706648831}

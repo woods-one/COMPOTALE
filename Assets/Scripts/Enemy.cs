@@ -79,7 +79,7 @@ public class Enemy : Token
 
         // 確率で増減
         bool shouldSpeedUP = Random.Range(0,4) == 0;
-        if(shouldSpeedUP)
+        if(!shouldSpeedUP)
         {
             spd += 1;
         }
