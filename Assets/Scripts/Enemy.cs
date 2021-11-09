@@ -5,6 +5,10 @@ using System.Collections.Generic;
 using QuadrantType = DirectionUtility.QuadrantType;
 using DirectionRange = DirectionUtility.DirectionRange;
 
+/// <summary>
+/// クローンコンポタくん（撃つべきキャラクタ）のスクリプト
+/// </summary>
+
 public class Enemy : Token
 {
     /// <summary>移動方向（キャラごとにリセット時の方向範囲が決まっています）</summary>

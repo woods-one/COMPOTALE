@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// （借り物）
+/// </summary>
 /// 様々なユーティリティ.
 public class Util {
   /// Mathf.Cosの角度指定版.

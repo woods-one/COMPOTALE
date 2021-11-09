@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
+/// <summary>
+/// カウントダウンするタイマーのスクリプト
+/// </summary>
+
 public class Timer : MonoBehaviour
 {
     public static float countTime;

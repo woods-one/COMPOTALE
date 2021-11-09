@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using PlayFab;
 using PlayFab.ClientModels;
 
+/// <summary>
+/// ゲームに関する処理、オブジェクトの表示非表示、ランキングなどの処理を行うスクリプト
+/// </summary>
 public class GameMgr : MonoBehaviour
 {
     public AudioClip sound2;
@@ -25,7 +28,7 @@ public class GameMgr : MonoBehaviour
 
     /// <summary>タップされたらいけないキャラ</summary>
     [SerializeField]
-    private Bomb bombCharacter;
+    private RealCompotale bombCharacter;
 
     [SerializeField]
     private List<Enemy> characters;
@@ -41,7 +44,6 @@ public class GameMgr : MonoBehaviour
         scoDis.SetActive(false);
         logMas.SetActive(false);
         send.SetActive(false);
-        //butMgr.SetActive(false);
 
         SetupCharacters();
     }
@@ -110,15 +112,13 @@ public class GameMgr : MonoBehaviour
             
             }
             if(flag3 && flag5){
-                ClearRoot(Bomb.bombCount, Enemy.Count);
+                ClearRoot(RealCompotale.bombCount, Enemy.Count);
                 flag3 = false;
             }
         }
     }
     public static void ClearRoot(int x, int y)
     {
-        Debug.Log(x);
-        Debug.Log(y);
        if(x == 0 && y == 0)SceneManager.LoadScene("Proot");
        else if(x == 0 && 35 <= y)SceneManager.LoadScene("Troot");
        else if(0 < x && 40 <= y)SceneManager.LoadScene("Groot");
@@ -176,6 +176,7 @@ public class GameMgr : MonoBehaviour
             },
             result => {
                 Debug.Log("Set display name was succeeded");
+                SubmitScore(Enemy.scr);
             },
             error => {
                 Debug.LogError(error.GenerateErrorReport());

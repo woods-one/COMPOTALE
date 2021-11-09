@@ -1,6 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// キャラクターを撃った時パーティクルを出すスクリプト（借り物）
+/// </summary>
+
 public class Particle : Token
 {
 

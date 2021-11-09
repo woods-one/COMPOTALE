@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// スタートのボタンを押すとゲームのメイン画面に偏移するスクリプト
+/// </summary>
+
 public class OnStartBotton : MonoBehaviour
 {
     public void OnClick()

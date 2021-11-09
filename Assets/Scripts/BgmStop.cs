@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// ゲームクリア時にBGMストップさせるスクリプト
+/// </summary>
+
 public class BgmStop : MonoBehaviour
 {
     AudioSource audioSource;

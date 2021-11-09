@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// （借り物）
+/// </summary>
 [AddComponentMenu("UI/Effects/Text 4 Corners Gradient")]
 public class UITextCornersGradient : BaseMeshEffect {
 	public Color m_topLeftColor = Color.white;

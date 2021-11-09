@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Bomb : Token
+/// <summary>
+/// 本物のコンポタくん（撃ってはいけないキャラクタ）のスクリプト
+/// </summary>
+public class RealCompotale : Token
 {
     /// <summary>クリックされた時の処理</summary>
     private Action onClick;

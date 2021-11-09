@@ -4,7 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClearMessage : MonoBehaviour
+/// <summary>
+/// クローンコンポタくんと本物のコンポタくんを撃った結果によって変わるルートの文章を表示するスクリプト
+/// </summary>
+
+public class RootsMassage : MonoBehaviour
 {
     public string clearmessage;
     string cleartext;
@@ -21,9 +25,9 @@ public class ClearMessage : MonoBehaviour
     {
         cleartime = Time.deltaTime;
         cleartime2 = (int)Mathf.Floor(cleartime);
-        if(cleartime2 % 2 == 0)StartCoroutine(yakisoba());
+        if(cleartime2 % 2 == 0)StartCoroutine(ByOneCharacter());
     }
-    IEnumerator yakisoba()
+    IEnumerator ByOneCharacter()
     {
         yield return new WaitForSeconds(0.5f);
         if(i < clearmessage.Length){

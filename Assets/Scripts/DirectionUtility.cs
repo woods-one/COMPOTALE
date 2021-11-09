@@ -4,22 +4,22 @@ using System.Collections.Generic;
 public static class DirectionUtility
 {
     /// <summary>
-    /// �ی��̎��
+    /// 象限の種別
     /// </summary>
     public enum QuadrantType
     {
-        /// <summary>���ی�</summary>
+        /// <summary>第一象限</summary>
         First = 1,
-        /// <summary>���ی�</summary>
+        /// <summary>第二象限</summary>
         Second,
-        /// <summary>��O�ی�</summary>
+        /// <summary>第三象限</summary>
         Third,
-        /// <summary>��l�ی�</summary>
+        /// <summary>第四象限</summary>
         Fourth
     }
 
     /// <summary>
-    /// �e�ی��̊p�x�͈̔�
+    /// 各象限の角度の範囲
     /// </summary>
     private static readonly Dictionary<QuadrantType, DirectionRange> DirectionRangePetterns = new Dictionary<QuadrantType, DirectionRange>() {
         { QuadrantType.First, new DirectionRange(0, 89) },
@@ -29,7 +29,7 @@ public static class DirectionUtility
     };
 
     /// <summary>
-    /// �����͈̔�
+    /// 方向の範囲
     /// </summary>
     public class DirectionRange
     {
@@ -43,7 +43,7 @@ public static class DirectionUtility
         }
 
         /// <summary>
-        /// �R���X�g���N�^
+        /// コンストラクタ
         /// </summary>
         public DirectionRange(float directionStart, float directionEnd)
         {
@@ -53,7 +53,7 @@ public static class DirectionUtility
     }
 
     /// <summary>
-    /// �����͈̔͂��擾
+    /// 方向の範囲を取得
     /// </summary>
     public static DirectionRange GetDirectionRange(QuadrantType quadrantType)
     {
@@ -62,12 +62,12 @@ public static class DirectionUtility
 
 
     /// <summary>
-    /// �ی��̔ԍ�����ی��̃^�C�v��ϊ��i1�n�܂�j
+    /// 象限の番号から象限のタイプを変換（1始まり）
     /// </summary>
-    /// <param name="quadrantNum">�扽�ی��i1�`4�j</param>
+    /// <param name="quadrantNum">第何象限（1～4）</param>
     public static QuadrantType ConvertIntToQuadrantType (int quadrantNum)
     {
-        // TODO:�����`�F�b�N������Ƃ����S�ł�
+        // TODO:引数チェックを入れるとより安全です
 
         QuadrantType type = (QuadrantType)System.Enum.ToObject(typeof(QuadrantType), quadrantNum);
         return type;

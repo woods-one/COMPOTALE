@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// プレイ中にスコアを表示、クリア時に最終スコアを表示するスクリプト
+/// </summary>
+
 public class Score : MonoBehaviour
 {
     public Text score;

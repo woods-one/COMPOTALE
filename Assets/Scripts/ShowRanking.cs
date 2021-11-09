@@ -4,6 +4,10 @@ using PlayFab.ClientModels;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// ランキングを表示するスクリプト
+/// </summary>
+
 public class ShowRanking : MonoBehaviour {
 
   public Text _rankingText = default;
@@ -11,7 +15,6 @@ public class ShowRanking : MonoBehaviour {
   void Start()
   {
     RankingUserLogin();
-    Debug.Log("hoge");
   }
 
   public void GetLeaderboard() { 

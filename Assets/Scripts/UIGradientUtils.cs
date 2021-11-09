@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// （借り物）
+/// </summary>
 public static class UIGradientUtils
 {
 	public struct Matrix2x3

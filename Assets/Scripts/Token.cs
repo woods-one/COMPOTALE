@@ -3,6 +3,9 @@ using System.Collections;
 
 /// キャラクター基底クラス.
 /// SpriteRendererが必要.
+/// <summary>
+/// （借り物）
+/// </summary>
 [RequireComponent (typeof(SpriteRenderer))]
 public class Token : MonoBehaviour
 {
