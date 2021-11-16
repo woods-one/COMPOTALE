@@ -6,29 +6,26 @@ using System;
 /// <summary>
 /// 本物のコンポタくん（撃ってはいけないキャラクタ）のスクリプト
 /// </summary>
-public class RealCompotale : Token
+public class RealCompota : Token
 {
     /// <summary>クリックされた時の処理</summary>
     private Action onClick;
 
-    public AudioClip sound4;
+    [SerializeField]
+    private AudioClip soundShootRealCompota;
     AudioSource audioSource;
-    int sflag;
-    int sflag2;
-    bool flag = true;
+    bool isShootRealCompota;
 
     private bool isClickedBomb;
 
-    public static int bombCount;
+    public static int shootCount;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        sflag = 0;
-        sflag2 = 1;
-
+        isShootRealCompota = false;
         isClickedBomb = false;
-        bombCount = 0;
+        shootCount = 0;
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
         float dir = UnityEngine.Random.Range(0, 359);
         float spd = 5;
@@ -50,17 +47,10 @@ public class RealCompotale : Token
             ClampScreen();
         }
         
-        if (sflag == sflag2 && flag)
+        if (isShootRealCompota)
         {
-            audioSource.PlayOneShot(sound4);
-            flag = false;
-            sflag2++;
-        }
-        else if (sflag == sflag2 && !flag)
-        {
-            audioSource.PlayOneShot(sound4);
-            flag = true;
-            sflag2++;
+            audioSource.PlayOneShot(soundShootRealCompota);
+            isShootRealCompota = false;
         }
     }
 
@@ -70,10 +60,10 @@ public class RealCompotale : Token
     public void OnMouseDown()
     {
         isClickedBomb = true;
-        Enemy.scr -= 50;
-        sflag++;
-        bombCount++;
-        if(Enemy.scr < 0)Enemy.scr = 0;
+        Enemy.score -= 50;
+        isShootRealCompota = true;
+        shootCount++;
+        if(Enemy.score < 0)Enemy.score = 0;
         for (int i = 0; i < 32; i++)
         {
             Particle.Add(X, Y, 2);

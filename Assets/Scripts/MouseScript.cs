@@ -12,7 +12,7 @@ public class MouseScript : MonoBehaviour
 
     void Update()
     {
-        this.screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 mouseCoordinate = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         transform.position = Camera.main.ScreenToWorldPoint(mouseCoordinate);
         if (Timer.countTime <= 0)

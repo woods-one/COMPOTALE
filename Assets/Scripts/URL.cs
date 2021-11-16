@@ -8,7 +8,8 @@ using UnityEngine;
 
 public class URL : Token
 {
-    public string url;
+    [SerializeField]
+    private string url;
 
     public void OnMouseDown()
     {

@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 public class ShowRanking : MonoBehaviour {
 
-  public Text _rankingText = default;
+  [SerializeField]
+  private Text rankingText = default;
 
   void Start()
   {
@@ -31,15 +32,15 @@ public class ShowRanking : MonoBehaviour {
   private void OnGetLeaderboardSuccess(GetLeaderboardResult result){
     Debug.Log($"ランキング(リーダーボード)の取得に成功しました");
 
-    _rankingText.text = "";
+    rankingText.text = "";
     foreach (var entry in result.Leaderboard) {
-      _rankingText.text += $"順位 : {entry.Position + 1}位  スコア : {entry.StatValue}  名前 : {entry.DisplayName}\n\n";
+      rankingText.text += $"順位 : {entry.Position + 1}位  スコア : {entry.StatValue}  名前 : {entry.DisplayName}\n\n";
     }
   }
 
   private void OnGetLeaderboardFailure(PlayFabError error){
     Debug.LogError($"ランキング(リーダーボード)の取得に失敗しました\n{error.GenerateErrorReport()}");
-    _rankingText.text += "ランキングの取得に失敗しました\nタイトルに戻って再度お試しください";
+    rankingText.text += "ランキングの取得に失敗しました\nタイトルに戻って再度お試しください";
   }
   public void RankingUserLogin()
   {

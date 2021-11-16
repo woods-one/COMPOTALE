@@ -14,7 +14,7 @@ public class Score : MonoBehaviour
  
     void Update()
     {
-        score.text = "SCORE: " + Enemy.scr.ToString();
-        scoreDis.text = "あなたのスコアは" + Enemy.scr.ToString() + "点です！";
+        score.text = "SCORE: " + Enemy.score.ToString();
+        scoreDis.text = "あなたのスコアは" + Enemy.score.ToString() + "点です！";
     }
 }

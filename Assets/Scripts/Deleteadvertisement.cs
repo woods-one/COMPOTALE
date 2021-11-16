@@ -6,20 +6,18 @@ using UnityEngine;
 /// 広告のバツ印を押したら広告が消えるスクリプト
 /// </summary>
 
-public class Deleteadvertisement : Token
+public class Deleteadvertisement : MonoBehaviour
 {
-    public string adver;
-    public string Batu;
+    [SerializeField]
+    private string advertisementName;
     GameObject advertisement;
-    GameObject batu;
     void Start()
     {
-        advertisement = GameObject.Find(adver);
-        batu = GameObject.Find(Batu);
+        advertisement = GameObject.Find(advertisementName);
     } 
     public void OnMouseDown()
     {
-        batu.SetActive(false);
+        this.gameObject.SetActive(false);
         advertisement.SetActive(false); 
     }
 }

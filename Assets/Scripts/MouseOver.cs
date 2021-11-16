@@ -8,7 +8,8 @@ using UnityEngine;
 
 public class MouseOver : MonoBehaviour
 {
-    public string ShadowName;
+    [SerializeField]
+    private string ShadowName;
     GameObject Shadow;
 
     void Start()

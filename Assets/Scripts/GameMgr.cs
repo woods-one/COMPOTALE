@@ -10,25 +10,17 @@ using PlayFab.ClientModels;
 /// </summary>
 public class GameMgr : MonoBehaviour
 {
-    public AudioClip sound2;
-    public AudioClip sound3;
+    [SerializeField]
+    private AudioClip soundGameClear;
     AudioSource audioSource;
-    bool flag2 = false;
-    public static bool flag3 = false;
-    public static bool flag5 = false;
-    GameObject enemyBox;
-    GameObject bomb;
-    GameObject aim;
-    GameObject nick;
-    GameObject scoDis;
-    GameObject logMas;
-    GameObject score;
-    GameObject time;
-    GameObject send;
+    bool isCountZero = false;
+    GameObject clearGameUI;
+    GameObject playingGameUI;
+    GameObject playingGameObject;
 
     /// <summary>タップされたらいけないキャラ</summary>
     [SerializeField]
-    private RealCompotale bombCharacter;
+    private RealCompota realCompotaCharacter;
 
     [SerializeField]
     private List<Enemy> characters;
@@ -36,14 +28,8 @@ public class GameMgr : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        nick = GameObject.Find("Nickname");
-        scoDis = GameObject.Find("ScoreDisplay");
-        logMas = GameObject.Find("LoginMassage");
-        send = GameObject.Find("SendBotton");
-        nick.SetActive(false);
-        scoDis.SetActive(false);
-        logMas.SetActive(false);
-        send.SetActive(false);
+        clearGameUI = GameObject.Find("ClearGameUI");
+        clearGameUI.SetActive(false);
 
         SetupCharacters();
     }
@@ -53,7 +39,7 @@ public class GameMgr : MonoBehaviour
     /// </summary>
     private void SetupCharacters()
     {
-        bombCharacter.RegisterOnclickCallback(OnClickBombCharacter);
+        realCompotaCharacter.RegisterOnclickCallback(OnClickRealCompotaCharacter);
 
         for (int i = 0; i < characters.Count; i++)
         {
@@ -64,7 +50,7 @@ public class GameMgr : MonoBehaviour
     /// <summary>
     /// クリックしてはいけないキャラがクリックされた時の処理
     /// </summary>
-    private void OnClickBombCharacter()
+    private void OnClickRealCompotaCharacter()
     {
         // クリックされた時の処理
         ResetCharactersVelocity();
@@ -81,43 +67,24 @@ public class GameMgr : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown("return") && InputFieldManager.flag4) {
-            UserLogin(InputFieldManager.userName);
-        }
-    }
-    public void OnGUI()
+    public void Update()
     {        
         if(Timer.countTime <= 0)
         {
-            if (!flag2)
+            if (!isCountZero)
             {
-                enemyBox = GameObject.Find("EnemyBox");
-                bomb = GameObject.Find("Bomb");
-                aim = GameObject.Find("Aim");
-                score = GameObject.Find("Score");
-                time = GameObject.Find("Time");
-                enemyBox.SetActive(false);
-                bomb.SetActive(false);
-                aim.SetActive(false);
-                score.SetActive(false);
-                time.SetActive(false);
-                nick.SetActive(true);
-                scoDis.SetActive(true);
-                logMas.SetActive(true);
-                send.SetActive(true);
-                audioSource.PlayOneShot(sound2);
-                flag2 = true;
-            
-            }
-            if(flag3 && flag5){
-                ClearRoot(RealCompotale.bombCount, Enemy.Count);
-                flag3 = false;
+                playingGameUI = GameObject.Find("PlayingGameUI");
+                playingGameObject = GameObject.Find("PlayingGameObject");
+                playingGameUI.SetActive(false);
+                playingGameObject.SetActive(false);
+                clearGameUI.SetActive(true);
+                audioSource.PlayOneShot(soundGameClear);
+                isCountZero = true;
+
             }
         }
     }
-    public static void ClearRoot(int x, int y)
+    public void ClearRoot(int x, int y)
     {
        if(x == 0 && y == 0)SceneManager.LoadScene("Proot");
        else if(x == 0 && 35 <= y)SceneManager.LoadScene("Troot");
@@ -135,8 +102,6 @@ public class GameMgr : MonoBehaviour
                 
                 Debug.Log("ログイン成功！");
                 SetPlayerDisplayName(usename);
-                flag5 = true;
-                flag3 = true;
             },
             error => 
             {
@@ -176,7 +141,7 @@ public class GameMgr : MonoBehaviour
             },
             result => {
                 Debug.Log("Set display name was succeeded");
-                SubmitScore(Enemy.scr);
+                SubmitScore(Enemy.score);
             },
             error => {
                 Debug.LogError(error.GenerateErrorReport());

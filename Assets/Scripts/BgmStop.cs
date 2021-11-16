@@ -8,13 +8,13 @@ using UnityEngine;
 
 public class BgmStop : MonoBehaviour
 {
-    AudioSource audioSource;
+    AudioSource mianBGM;
     void Update()
     {
         if (Timer.countTime <= 0)
         {
-            audioSource = this.GetComponent<AudioSource>();
-            audioSource.Stop();
+            mianBGM = this.GetComponent<AudioSource>();
+            mianBGM.Stop();
         }
     }
 }
