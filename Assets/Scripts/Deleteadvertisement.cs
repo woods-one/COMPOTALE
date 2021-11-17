@@ -6,7 +6,7 @@ using UnityEngine;
 /// 広告のバツ印を押したら広告が消えるスクリプト
 /// </summary>
 
-public class Deleteadvertisement : MonoBehaviour
+public class DeleteAdvertisement : MonoBehaviour
 {
     [SerializeField]
     private string advertisementName;

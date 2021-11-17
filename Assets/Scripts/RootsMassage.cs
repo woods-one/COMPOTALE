@@ -10,30 +10,20 @@ using UnityEngine.UI;
 
 public class RootsMassage : MonoBehaviour
 {
-    public string clearmessage;
-    string cleartext;
-    float cleartime;
-    int cleartime2;
-    int i;
+    [SerializeField]
+    private string clearMessage;
+    string clearText;
     void Start()
     {
-      i = 0;
-      cleartext = "";
-    }
-
-    void FixedUpdate()
-    {
-        cleartime = Time.deltaTime;
-        cleartime2 = (int)Mathf.Floor(cleartime);
-        if(cleartime2 % 2 == 0)StartCoroutine(ByOneCharacter());
+      clearText = "";
+      StartCoroutine(ByOneCharacter());
     }
     IEnumerator ByOneCharacter()
     {
-        yield return new WaitForSeconds(0.5f);
-        if(i < clearmessage.Length){
-        cleartext = clearmessage.Substring(0, i);
-        GetComponent<Text>().text = cleartext;
-        i++;
+        for(int i = 0; i < clearMessage.Length; i++){
+            clearText = clearMessage.Substring(0, i);
+            GetComponent<Text>().text = clearText;
+            yield return new WaitForSeconds(0.04f);
         }
     }
 }

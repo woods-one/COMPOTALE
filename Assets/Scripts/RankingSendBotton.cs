@@ -12,7 +12,7 @@ public class RankingSendBotton : MonoBehaviour
     public void OnClick()
     {
         gameMgr = new GameMgr();
-        if(InputFieldManager.flag4){
+        if(InputFieldManager.isNotUserNameNull){
             gameMgr.ClearRoot(RealCompota.shootCount, Enemy.killCount);
             gameMgr.UserLogin(InputFieldManager.userName);
         }

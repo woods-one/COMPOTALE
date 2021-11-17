@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2721799}
   - component: {fileID: 2721800}
   m_Layer: 0
-  m_Name: compotaEnemy
+  m_Name: CompotaEnemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 49947025}
   - component: {fileID: 49947024}
   m_Layer: 0
-  m_Name: compotaEnemy (1)
+  m_Name: CompotaEnemy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 56061223}
   - component: {fileID: 56061224}
   m_Layer: 0
-  m_Name: compotaEnemy (1)
+  m_Name: CompotaEnemy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 91696676}
   - component: {fileID: 91696675}
   m_Layer: 0
-  m_Name: compota
+  m_Name: Compota
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bdac7020b689754c84bc3403c44c2cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clearmessage: "\u30B3\u30F3\u30DD\u30BF\u304F\u3093\u306F\u3001\u3044\u306A\u304F\u306A\u3063\u3066\u3057\u307E\u3063\u305F\u3002\u541B\u304C\u60AA\u3044\u306E\u3067\u306F\u306A\u3044\u3002\u3082\u3068\u3082\u3068\u3001\u305D\u3046\u3044\u3046\u904B\u547D\u3060\u3063\u305F\u306E\u3060\u3002\u3060\u304C\u3001\u305D\u308C\u3067\u3082\u306A\u304A\u30AF\u30ED\u30FC\u30F3\u30B3\u30F3\u30DD\u30BF\u304F\u3093\u306E\u52E2\u529B\u306F\u6B62\u307E\u308B\u3053\u3068\u3092\u77E5\u3089\u306A\u3044\u3002\u60B2\u3057\u307F\u3092\u80F8\u306B\u3001\u4ECA\u65E5\u3082\u6226\u3044\u7D9A\u3051\u308B\u3002\u304D\u3063\u3068\u3001\u3042\u306E\u7A7A\u306E\u5148\u306B\u3001\u30B3\u30F3\u30DD\u30BF\u304F\u3093\u304C\u3044\u308B\u306E\u304B\u3089\u3002(C\u30EB\u30FC\u30C8) "
+  clearMessage: "\u30B3\u30F3\u30DD\u30BF\u304F\u3093\u306F\u3001\u3044\u306A\u304F\u306A\u3063\u3066\u3057\u307E\u3063\u305F\u3002\u541B\u304C\u60AA\u3044\u306E\u3067\u306F\u306A\u3044\u3002\u3082\u3068\u3082\u3068\u3001\u305D\u3046\u3044\u3046\u904B\u547D\u3060\u3063\u305F\u306E\u3060\u3002\u3060\u304C\u3001\u305D\u308C\u3067\u3082\u306A\u304A\u30AF\u30ED\u30FC\u30F3\u30B3\u30F3\u30DD\u30BF\u304F\u3093\u306E\u52E2\u529B\u306F\u6B62\u307E\u308B\u3053\u3068\u3092\u77E5\u3089\u306A\u3044\u3002\u60B2\u3057\u307F\u3092\u80F8\u306B\u3001\u4ECA\u65E5\u3082\u6226\u3044\u7D9A\u3051\u308B\u3002\u304D\u3063\u3068\u3001\u3042\u306E\u7A7A\u306E\u5148\u306B\u3001\u30B3\u30F3\u30DD\u30BF\u304F\u3093\u304C\u3044\u308B\u304B\u3089\u3002(C\u30EB\u30FC\u30C8)  "
 --- !u!114 &582242835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 1136469077}
   - component: {fileID: 1136469076}
   m_Layer: 0
-  m_Name: compotaEnemy
+  m_Name: CompotaEnemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1301,7 +1301,7 @@ GameObject:
   - component: {fileID: 1504060290}
   - component: {fileID: 1504060289}
   m_Layer: 0
-  m_Name: musicBox
+  m_Name: MusicBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1611,7 +1611,7 @@ GameObject:
   - component: {fileID: 2112257776}
   - component: {fileID: 2112257777}
   m_Layer: 0
-  m_Name: compotaEnemy (2)
+  m_Name: CompotaEnemy5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

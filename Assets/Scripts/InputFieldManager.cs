@@ -10,28 +10,23 @@ using UnityEngine.UI;
 public class InputFieldManager : MonoBehaviour
 {
     InputField nickName;
-    public static bool flag4 = false;
+    public static bool isNotUserNameNull = false;
     public static string userName;
-
-    void Start()
-    {
-        nickName = GameObject.Find("Nickname").GetComponent<InputField>();
-    }
-
 
     public void GetInputName()
     {
+        nickName = GameObject.Find("NickName").GetComponent<InputField>();
         userName = nickName.text;
         if(2 < userName.Length &&userName.Length < 16){
             for (int i = 0; i < userName.Length; i++)
             {
-                if(userName[i] == ' ')continue;
+                if(userName[i] == ' ' || userName[i] == '　')continue;
 
-                flag4 = true;
+                isNotUserNameNull = true;
                 break;
             }
         }
-        if(!flag4){
+        if(!isNotUserNameNull){
             nickName.text = "";
         }
     }
