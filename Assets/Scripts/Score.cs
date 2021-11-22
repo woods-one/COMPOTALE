@@ -11,10 +11,13 @@ public class Score : MonoBehaviour
 {
     public Text score;
     public Text scoreDis;
+    private int indicateScore = 0;
  
     void Update()
     {
-        score.text = "SCORE: " + Enemy.score.ToString();
+        if(indicateScore < Enemy.score)indicateScore++;
+        if(indicateScore > Enemy.score)indicateScore--;
+        score.text = "SCORE: " + indicateScore.ToString();
         scoreDis.text = "あなたのスコアは" + Enemy.score.ToString() + "点です！";
     }
 }

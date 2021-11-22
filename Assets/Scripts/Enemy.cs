@@ -18,8 +18,8 @@ public class Enemy : Token
     const int MinSpeed = 1;
     const int DefaultSpeed = 7;
 
-    public static int score = 0;
-    public static int killCount = 0;
+    public static int score;
+    public static int killCount;
     [SerializeField]
     private AudioClip soundKillEnemy;
     AudioSource audioSource;
@@ -28,6 +28,8 @@ public class Enemy : Token
     public static float dir;//direction
     void Start()
     {
+        score = 0;
+        killCount = 0;
         audioSource = GetComponent<AudioSource>();
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
         dir = Random.Range(0, 359);
