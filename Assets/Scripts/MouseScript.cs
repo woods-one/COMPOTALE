@@ -4,20 +4,17 @@ using System.Collections;
 /// <summary>
 /// オブジェクトがマウスを追いかけるスクリプト
 /// </summary>
-
 public class MouseScript : MonoBehaviour
 {
-
-    Vector3 screenPoint;
-
-    void Update()
-    {
-        screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        Vector3 mouseCoordinate = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-        transform.position = Camera.main.ScreenToWorldPoint(mouseCoordinate);
-        if (Timer.countTime <= 0)
-        {
-            this.gameObject.SetActive(false);
-        }
+    private Vector3 position;
+    
+    void FixedUpdate () {
+        // Vector3でマウス位置座標を取得する
+        position = Input.mousePosition;
+        // Z軸修正
+        position.z = 10f;
+        
+        // ワールド座標に変換されたマウス座標を代入
+        gameObject.transform.position = Camera.main.ScreenToWorldPoint(position);
     }
 }
