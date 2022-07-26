@@ -17,19 +17,11 @@ public class Particle : Token
     }
 
     static GameObject _prefab;
-    static GameObject _prefab2;
-    public static Particle Add(float x, float y, float z)
+    public static Particle Add(float x, float y, int z)
     {
-        if(z == 1)
-        {
-            _prefab = GetPrefab(_prefab, Enum.GetName(typeof(Particles), 0));
-            return CreateInstance2<Particle>(_prefab, x, y);
-        }
-        else if(z == 2){
-            _prefab2 = GetPrefab(_prefab2, Enum.GetName(typeof(Particles), 1));
-            return CreateInstance2<Particle>(_prefab2, x, y);
-        }
-        return null;
+        _prefab = null;
+        _prefab = GetPrefab(_prefab, Enum.GetName(typeof(Particles), z));
+        return CreateInstance2<Particle>(_prefab, x, y);
     }
     IEnumerator Start()
     {
