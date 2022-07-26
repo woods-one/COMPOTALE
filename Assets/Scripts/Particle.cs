@@ -1,27 +1,27 @@
 using UnityEngine;
+using System;
 using System.Collections;
+
+using Random = UnityEngine.Random;
 
 
 /// <summary>
 /// キャラクターを撃った時パーティクルを出すスクリプト（借り物）
 /// </summary>
-
 public class Particle : Token
 {
-
-    static GameObject _prefab = null;
-    static GameObject _prefab2 = null;
-    public static Particle Add(float x, float y, float z)
+    enum Particles
     {
-        if(z == 1){
-            _prefab = GetPrefab(_prefab, "Particle");
-            return CreateInstance2<Particle>(_prefab, x, y);
-        }
-        else if(z == 2){
-            _prefab2 = GetPrefab(_prefab2, "Particle2");
-            return CreateInstance2<Particle>(_prefab2, x, y);
-        }
-        return null;
+        OriginalCompotaParticle,
+        CloneCompotaParticle
+    }
+
+    static GameObject particlePrefab;
+    public static Particle Add(float x, float y, int z)
+    {
+        particlePrefab = null;
+        particlePrefab = GetPrefab(particlePrefab, Enum.GetName(typeof(Particles), z));
+        return CreateInstance2<Particle>(particlePrefab, x, y);
     }
     IEnumerator Start()
     {

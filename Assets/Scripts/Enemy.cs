@@ -69,7 +69,7 @@ public class Enemy : Token
         killCount++;
         for (int i = 0; i < 32; i++)
         {
-        Particle.Add(X, Y, 1);
+        Particle.Add(X, Y, 0);
         }
 
         // 確率で増減
