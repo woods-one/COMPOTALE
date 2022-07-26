@@ -16,12 +16,12 @@ public class Particle : Token
         CloneCompotaParticle
     }
 
-    static GameObject _prefab;
+    static GameObject particlePrefab;
     public static Particle Add(float x, float y, int z)
     {
-        _prefab = null;
-        _prefab = GetPrefab(_prefab, Enum.GetName(typeof(Particles), z));
-        return CreateInstance2<Particle>(_prefab, x, y);
+        particlePrefab = null;
+        particlePrefab = GetPrefab(particlePrefab, Enum.GetName(typeof(Particles), z));
+        return CreateInstance2<Particle>(particlePrefab, x, y);
     }
     IEnumerator Start()
     {
