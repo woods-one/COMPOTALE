@@ -17,6 +17,7 @@ public class Particle : Token
     }
 
     static GameObject particlePrefab;
+    
     public static Particle Add(float x, float y, int z)
     {
         particlePrefab = null;
