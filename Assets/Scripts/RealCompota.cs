@@ -16,7 +16,6 @@ public class RealCompota : Token
     AudioSource audioSource;
     bool isShootRealCompota;
 
-    private bool isClickedBomb;
 
     public static int shootCount;
 
@@ -24,7 +23,6 @@ public class RealCompota : Token
     {
         audioSource = GetComponent<AudioSource>();
         isShootRealCompota = false;
-        isClickedBomb = false;
         shootCount = 0;
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
         float dir = UnityEngine.Random.Range(0, 359);
@@ -59,7 +57,6 @@ public class RealCompota : Token
     /// </summary>
     public void OnMouseDown()
     {
-        isClickedBomb = true;
         Enemy.score -= 50;
         isShootRealCompota = true;
         shootCount++;
