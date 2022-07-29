@@ -17,7 +17,20 @@ public class Particle : Token
     }
 
     static GameObject particlePrefab;
-    
+
+    private const int MinDirectionRange = 0;
+    private const int MaxDirectionRange = 359;
+
+    private float MinParticleSpeed = 10.0f;
+    private float MaxParticleSpeed = 20.0f;
+
+    private float minScaleX = 0.01f;
+
+    private float waitSeconds = 0.01f;
+
+    private float rateChangeScale = 0.9f;
+    private float rateChangeSpeed = 0.9f;
+
     public static Particle Add(float x, float y, int z)
     {
         particlePrefab = null;
@@ -26,15 +39,15 @@ public class Particle : Token
     }
     IEnumerator Start()
     {
-        float dir = Random.Range(0, 359);
-        float spd = Random.Range(10.0f, 20.0f);
+        float dir = Random.Range(MinDirectionRange, MaxDirectionRange);
+        float spd = Random.Range(MinParticleSpeed, MaxParticleSpeed);
         SetVelocity(dir, spd);
 
-        while (ScaleX > 0.01f)
+        while (ScaleX > minScaleX)
         {
-            yield return new WaitForSeconds(0.01f);
-            MulScale(0.9f);
-            MulVelocity(0.9f);
+            yield return new WaitForSeconds(waitSeconds);
+            MulScale(rateChangeScale);
+            MulVelocity(rateChangeSpeed);
         }
         DestroyObj();
     }
