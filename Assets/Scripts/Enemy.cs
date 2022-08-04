@@ -8,7 +8,6 @@ using DirectionRange = DirectionUtility.DirectionRange;
 /// <summary>
 /// クローンコンポタくん（撃つべきキャラクタ）のスクリプト
 /// </summary>
-
 public class Enemy : Token
 {
     /// <summary>移動方向（キャラごとにリセット時の方向範囲が決まっています）</summary>
@@ -20,21 +19,38 @@ public class Enemy : Token
 
     public static int score;
     public static int killCount;
+    
     [SerializeField]
     private AudioClip soundKillEnemy;
+    
+    [SerializeField]
     AudioSource audioSource;
+    
     private bool isKillEnemy = false;
     private float speed;
     public static float dir;//direction
+    
+    private int minDirRange = 0;
+    private int maxDirRange = 359;
+
+    private int minScrRange = 1;
+    private int maxScrRange = 16;
+
+    private int particleNum = 32;
+
+    private int minSpeedUPRandom = 0;
+    private int maxSpeedUPRandom = 4;
+
     void Start()
     {
         score = 0;
         killCount = 0;
-        audioSource = GetComponent<AudioSource>();
+        
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
-        dir = Random.Range(0, 359);
+        dir = Random.Range(minDirRange, maxDirRange);
         speed = DefaultSpeed;
         SetVelocity(dir, speed);
+        
     }
     void Update()
     {
@@ -60,28 +76,31 @@ public class Enemy : Token
     public void OnMouseDown()
     {
         isKillEnemy = true;
-        int scrRandom = Random.Range(1,15);
+        int scrRandom = Random.Range(minScrRange, maxScrRange);
+        
         if(scrRandom < 6)score += 10;
-        else if(5 < scrRandom && scrRandom < 11)score += 20;
-        else if(10 < scrRandom && scrRandom < 13)score += 30;
-        else if(12 < scrRandom && scrRandom < 15)score += 40;
+        else if(scrRandom < 11)score += 20;
+        else if(scrRandom < 13)score += 30;
+        else if(scrRandom < 15)score += 40;
         else score += 100;
+        
         killCount++;
-        for (int i = 0; i < 32; i++)
+        
+        for (int i = 0; i < particleNum; i++)
         {
-        Particle.Add(X, Y, 0);
+            Particle.Add(X, Y, 0);
         }
 
         // 確率で増減
-        bool shouldSpeedUP = Random.Range(0,4) == 0;
+        bool shouldSpeedUP = Random.Range(minSpeedUPRandom,maxDirRange) == 0;
         if(!shouldSpeedUP)
         {
             speed += 1;
         }
 
-        if(speed < MinSpeed || speed > MaxSpeed) speed = 7;
+        if(speed < MinSpeed || speed > MaxSpeed) speed = DefaultSpeed;
 
-        dir = Random.Range(0, 359);
+        dir = Random.Range(minDirRange, maxDirRange);
         
         SetVelocity(dir, speed);
     }
