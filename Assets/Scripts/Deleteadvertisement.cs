@@ -10,6 +10,9 @@ public class DeleteAdvertisement : MonoBehaviour
     [SerializeField]
     GameObject advertisement;
     
+    /// <summary>
+    /// もしクリックされたら実行する
+    /// </summary>
     public void OnMouseDown()
     {
         Destroy(advertisement);
