@@ -12,11 +12,18 @@ public class GameMgr : MonoBehaviour
 {
     [SerializeField]
     private AudioClip soundGameClear;
-    AudioSource audioSource;
-    bool isCountZero = false;
-    GameObject clearGameUI;
-    GameObject playingGameUI;
-    GameObject playingGameObject;
+
+    [SerializeField]
+    private AudioSource audioSource;
+    
+    private bool isCountZero = false;
+    
+    [SerializeField]
+    private GameObject clearGameUI;
+    [SerializeField]
+    private GameObject playingGameUI;
+    [SerializeField]
+    private GameObject playingGameObject;
 
     /// <summary>タップされたらいけないキャラ</summary>
     [SerializeField]
@@ -27,8 +34,6 @@ public class GameMgr : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        clearGameUI = GameObject.Find("ClearGameUI");
         clearGameUI.SetActive(false);
 
         SetupCharacters();
@@ -73,8 +78,6 @@ public class GameMgr : MonoBehaviour
         {
             if (!isCountZero)
             {
-                playingGameUI = GameObject.Find("PlayingGameUI");
-                playingGameObject = GameObject.Find("PlayingGameObject");
                 playingGameUI.SetActive(false);
                 playingGameObject.SetActive(false);
                 clearGameUI.SetActive(true);
