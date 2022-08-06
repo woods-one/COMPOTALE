@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using PlayFab;
 using PlayFab.ClientModels;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// ゲームに関する処理、オブジェクトの表示非表示、ランキングなどの処理を行うスクリプト
@@ -19,11 +20,11 @@ public class GameMgr : MonoBehaviour
     private bool isCountZero = false;
     
     [SerializeField]
-    private GameObject clearGameUI;
+    private GameObject clearGameUIObjects;
     [SerializeField]
-    private GameObject playingGameUI;
+    private GameObject playingGameUIObjects;
     [SerializeField]
-    private GameObject playingGameObject;
+    private GameObject playingGameObjects;
 
     /// <summary>タップされたらいけないキャラ</summary>
     [SerializeField]
@@ -34,7 +35,7 @@ public class GameMgr : MonoBehaviour
 
     void Start()
     {
-        clearGameUI.SetActive(false);
+        clearGameUIObjects.SetActive(false);
 
         SetupCharacters();
     }
@@ -78,9 +79,9 @@ public class GameMgr : MonoBehaviour
         {
             if (!isCountZero)
             {
-                playingGameUI.SetActive(false);
-                playingGameObject.SetActive(false);
-                clearGameUI.SetActive(true);
+                playingGameUIObjects.SetActive(false);
+                playingGameObjects.SetActive(false);
+                clearGameUIObjects.SetActive(true);
                 audioSource.PlayOneShot(soundGameClear);
                 isCountZero = true;
 
