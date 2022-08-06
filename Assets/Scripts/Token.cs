@@ -208,22 +208,6 @@ public class Token : MonoBehaviour
     }
   }
 
-  /// 方向.
-  /*public float Direction {
-    get {
-      Vector2 v = GetComponent<Rigidbody> (velocity);
-      return Mathf.Atan2 (v.y, v.x) * Mathf.Rad2Deg;
-    }
-  }
-
-  /// 速度.
-  public float Speed {
-    get {
-      Vector2 v = GetComponent<Rigidbody2D> (velocity);
-      return Mathf.Sqrt (v.x * v.x + v.y * v.y);
-    }
-  }*/
-
   /// 重力.
   public float GravityScale {
     get { return RigidBody.gravityScale; }

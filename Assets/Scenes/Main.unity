@@ -2349,6 +2349,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundGameClear: {fileID: 8300000, guid: 10f471cdbfbf5854eaa0f7719dd23a3d, type: 3}
+  audioSource: {fileID: 1721501042}
+  clearGameUI: {fileID: 1447757007}
+  playingGameUI: {fileID: 1327118207}
+  playingGameObject: {fileID: 962196621}
   realCompotaCharacter: {fileID: 1523568756}
   characters:
   - {fileID: 601085468}

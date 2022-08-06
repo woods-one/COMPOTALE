@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using PlayFab;
 using PlayFab.ClientModels;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// ゲームに関する処理、オブジェクトの表示非表示、ランキングなどの処理を行うスクリプト
@@ -12,11 +13,18 @@ public class GameMgr : MonoBehaviour
 {
     [SerializeField]
     private AudioClip soundGameClear;
-    AudioSource audioSource;
-    bool isCountZero = false;
-    GameObject clearGameUI;
-    GameObject playingGameUI;
-    GameObject playingGameObject;
+
+    [SerializeField]
+    private AudioSource audioSource;
+    
+    private bool isCountZero = false;
+    
+    [SerializeField]
+    private GameObject clearGameUIObjects;
+    [SerializeField]
+    private GameObject playingGameUIObjects;
+    [SerializeField]
+    private GameObject playingGameObjects;
 
     /// <summary>タップされたらいけないキャラ</summary>
     [SerializeField]
@@ -27,9 +35,7 @@ public class GameMgr : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        clearGameUI = GameObject.Find("ClearGameUI");
-        clearGameUI.SetActive(false);
+        clearGameUIObjects.SetActive(false);
 
         SetupCharacters();
     }
@@ -73,11 +79,9 @@ public class GameMgr : MonoBehaviour
         {
             if (!isCountZero)
             {
-                playingGameUI = GameObject.Find("PlayingGameUI");
-                playingGameObject = GameObject.Find("PlayingGameObject");
-                playingGameUI.SetActive(false);
-                playingGameObject.SetActive(false);
-                clearGameUI.SetActive(true);
+                playingGameUIObjects.SetActive(false);
+                playingGameObjects.SetActive(false);
+                clearGameUIObjects.SetActive(true);
                 audioSource.PlayOneShot(soundGameClear);
                 isCountZero = true;
 
