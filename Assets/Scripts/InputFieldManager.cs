@@ -9,13 +9,14 @@ using UnityEngine.UI;
 
 public class InputFieldManager : MonoBehaviour
 {
+    [SerializeField]
     InputField nickName;
+    
     public static bool isNotUserNameNull = false;
     public static string userName;
 
     public void GetInputName()
     {
-        nickName = GameObject.Find("NickName").GetComponent<InputField>();
         userName = nickName.text;
         if(2 < userName.Length &&userName.Length < 16){
             for (int i = 0; i < userName.Length; i++)

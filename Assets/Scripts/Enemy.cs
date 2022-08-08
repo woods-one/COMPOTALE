@@ -92,7 +92,7 @@ public class Enemy : Token
         }
 
         // 確率で増減
-        bool shouldSpeedUP = Random.Range(minSpeedUPRandom,maxDirRange) == 0;
+        bool shouldSpeedUP = Random.Range(minSpeedUPRandom,maxSpeedUPRandom) == 0;
         if(!shouldSpeedUP)
         {
             speed += 1;
