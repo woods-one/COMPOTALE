@@ -103,7 +103,6 @@ public class GameMgr : MonoBehaviour
         new LoginWithCustomIDRequest { CustomId = usename, CreateAccount = true},
             result => 
             {
-                
                 Debug.Log("ログイン成功！");
                 SetPlayerDisplayName(usename);
             },

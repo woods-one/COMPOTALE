@@ -922,6 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67bb9a6aa3927542925cbdd69448a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nickName: {fileID: 1144034539}
 --- !u!1 &601085467 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3313666281643933615, guid: 2291149154cacf243892a612824b40af, type: 3}
@@ -1254,7 +1255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327118208}
   m_Layer: 0
-  m_Name: PlayingGameUI
+  m_Name: PlayingGameUIObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1637,7 +1638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1447757008}
   m_Layer: 0
-  m_Name: ClearGameUI
+  m_Name: ClearGameUIObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,9 +2351,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundGameClear: {fileID: 8300000, guid: 10f471cdbfbf5854eaa0f7719dd23a3d, type: 3}
   audioSource: {fileID: 1721501042}
-  clearGameUI: {fileID: 1447757007}
-  playingGameUI: {fileID: 1327118207}
-  playingGameObject: {fileID: 962196621}
+  clearGameUIObjects: {fileID: 1447757007}
+  playingGameUIObjects: {fileID: 1327118207}
+  playingGameObjects: {fileID: 962196621}
   realCompotaCharacter: {fileID: 1523568756}
   characters:
   - {fileID: 601085468}
