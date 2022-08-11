@@ -28,7 +28,7 @@ public class Enemy : Token
     
     private bool isKillEnemy = false;
     private float speed;
-    public static float dir;//direction
+    private float dir;//direction
     
     private int minDirRange = 0;
     private int maxDirRange = 359;
