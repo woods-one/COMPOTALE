@@ -6,7 +6,6 @@ using UnityEngine.UI;
 /// <summary>
 /// ランキングのニックネームを入力する処理
 /// </summary>
-
 public class InputFieldManager : MonoBehaviour
 {
     [SerializeField]
