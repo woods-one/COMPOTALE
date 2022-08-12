@@ -13,6 +13,9 @@ public class GameMgr : MonoBehaviour
 {
     [SerializeField]
     private AudioClip soundGameClear;
+    
+    [SerializeField]
+    AudioSource mianBGM;
 
     [SerializeField]
     private AudioSource audioSource;
@@ -84,7 +87,7 @@ public class GameMgr : MonoBehaviour
                 clearGameUIObjects.SetActive(true);
                 audioSource.PlayOneShot(soundGameClear);
                 isCountZero = true;
-
+                mianBGM.Stop();
             }
         }
     }
