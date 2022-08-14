@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 /// <summary>
 /// クローンコンポタくんと本物のコンポタくんを撃った結果によって変わるルートの文章を表示するスクリプト
 /// </summary>
-
 public class RootsMassage : MonoBehaviour
 {
     [SerializeField]
@@ -15,17 +15,11 @@ public class RootsMassage : MonoBehaviour
 
     [SerializeField]
     private Text clearText;
+
+    private float timeBetweenCharacter = 0.1f;
     
     void Start()
     {
-      StartCoroutine(ByOneCharacter());
-    }
-    
-    IEnumerator ByOneCharacter()
-    {
-        for(int i = 0; i < clearMessage.Length; i++){
-            clearText.text = clearMessage.Substring(0, i);
-            yield return new WaitForSeconds(0.04f);
-        }
+        clearText.DOText(clearMessage, clearMessage.Length * timeBetweenCharacter).SetEase(Ease.Linear);
     }
 }
