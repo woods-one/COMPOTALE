@@ -611,7 +611,6 @@ GameObject:
   - component: {fileID: 582242833}
   - component: {fileID: 582242832}
   - component: {fileID: 582242836}
-  - component: {fileID: 582242835}
   - component: {fileID: 582242834}
   m_Layer: 5
   m_Name: Message
@@ -694,21 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearMessage: "\u30B3\u30F3\u30DD\u30BF\u304F\u3093\u306F\u3001\u3044\u306A\u304F\u306A\u3063\u3066\u3057\u307E\u3063\u305F\u3002\u541B\u304C\u60AA\u3044\u306E\u3067\u306F\u306A\u3044\u3002\u3082\u3068\u3082\u3068\u3001\u305D\u3046\u3044\u3046\u904B\u547D\u3060\u3063\u305F\u306E\u3060\u3002\u3060\u304C\u3001\u305D\u308C\u3067\u3082\u306A\u304A\u30AF\u30ED\u30FC\u30F3\u30B3\u30F3\u30DD\u30BF\u304F\u3093\u306E\u52E2\u529B\u306F\u6B62\u307E\u308B\u3053\u3068\u3092\u77E5\u3089\u306A\u3044\u3002\u60B2\u3057\u307F\u3092\u80F8\u306B\u3001\u4ECA\u65E5\u3082\u6226\u3044\u7D9A\u3051\u308B\u3002\u304D\u3063\u3068\u3001\u3042\u306E\u7A7A\u306E\u5148\u306B\u3001\u30B3\u30F3\u30DD\u30BF\u304F\u3093\u304C\u3044\u308B\u304B\u3089\u3002(C\u30EB\u30FC\u30C8)  "
---- !u!114 &582242835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582242830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 1
+  clearText: {fileID: 582242832}
 --- !u!114 &582242836
 MonoBehaviour:
   m_ObjectHideFlags: 0

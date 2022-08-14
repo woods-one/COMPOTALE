@@ -12,17 +12,19 @@ public class RootsMassage : MonoBehaviour
 {
     [SerializeField]
     private string clearMessage;
-    string clearText;
+
+    [SerializeField]
+    private Text clearText;
+    
     void Start()
     {
-      clearText = "";
       StartCoroutine(ByOneCharacter());
     }
+    
     IEnumerator ByOneCharacter()
     {
         for(int i = 0; i < clearMessage.Length; i++){
-            clearText = clearMessage.Substring(0, i);
-            GetComponent<Text>().text = clearText;
+            clearText.text = clearMessage.Substring(0, i);
             yield return new WaitForSeconds(0.04f);
         }
     }
