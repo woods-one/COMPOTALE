@@ -10,18 +10,18 @@ public class MouseOver : MonoBehaviour
 {
     [SerializeField]
     private string ShadowName;
-    GameObject Shadow;
+    GameObject shadowObject;
 
     void Start()
     {
-        Shadow = GameObject.Find(ShadowName);
-        Shadow.SetActive(false);
+        shadowObject = GameObject.Find(ShadowName);
+        shadowObject.SetActive(false);
     }
     void OnMouseEnter() 
     {
-        Shadow.SetActive(true);        
+        shadowObject.SetActive(true);        
     }
     void OnMouseExit() {
-        Shadow.SetActive(false);
+        shadowObject.SetActive(false);
     }
 }
