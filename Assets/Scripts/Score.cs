@@ -9,15 +9,18 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public Text score;
+    [SerializeField]
+    private Text score;
+    [SerializeField]
     public Text scoreDis;
+    
     private int indicateScore = 0;
  
     void Update()
     {
         if(indicateScore < Enemy.score)indicateScore++;
         if(indicateScore > Enemy.score)indicateScore--;
-        score.text = "SCORE: " + indicateScore.ToString();
-        scoreDis.text = "あなたのスコアは" + Enemy.score.ToString() + "点です！";
+        score.text = $"SCORE: {indicateScore}";
+        scoreDis.text = $"あなたのスコアは{Enemy.score}";
     }
 }
