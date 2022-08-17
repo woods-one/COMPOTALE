@@ -13,7 +13,7 @@ public class Score : MonoBehaviour
     private Text score;
     [SerializeField]
     public Text scoreDis;
-    
+
     private int indicateScore = 0;
  
     void Update()

@@ -5,10 +5,12 @@ using UnityEngine.UI;
 /// <summary>
 /// カウントダウンするタイマーのスクリプト
 /// </summary>
-
 public class Timer : MonoBehaviour
 {
     public static float countTime;
+
+    [SerializeField]
+    private Text timerText;
 
     void Start()
     {
@@ -19,6 +21,6 @@ public class Timer : MonoBehaviour
     {
         countTime -= Time.deltaTime;
         if(countTime <= 0)countTime = 0;
-        GetComponent<Text>().text = "Time: " + countTime.ToString("F2");
+        timerText.text = $"Time: {countTime:F2}";
     }
 }
