@@ -791,6 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65cea0741d678b44d8d5c18e7c140e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerText: {fileID: 334670140}
 --- !u!114 &334670143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2350,6 +2351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundGameClear: {fileID: 8300000, guid: 10f471cdbfbf5854eaa0f7719dd23a3d, type: 3}
+  mianBGM: {fileID: 0}
   audioSource: {fileID: 1721501042}
   clearGameUIObjects: {fileID: 1447757007}
   playingGameUIObjects: {fileID: 1327118207}
