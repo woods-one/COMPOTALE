@@ -416,6 +416,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
+      propertyPath: gameMgr
+      value: 
+      objectReference: {fileID: 1721501040}
+    - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
       propertyPath: scoreCom
       value: 
       objectReference: {fileID: 278694436}
@@ -599,6 +603,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
+      propertyPath: gameMgr
+      value: 
+      objectReference: {fileID: 1721501040}
     - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
       propertyPath: scoreCom
       value: 
@@ -953,6 +961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundKillEnemy: {fileID: 8300000, guid: 68de972171bc4b34aa86417aa6d37570, type: 3}
   audioSource: {fileID: 1417209796}
+  gameMgr: {fileID: 1721501040}
   scoreCom: {fileID: 278694436}
 --- !u!4 &939594123 stripped
 Transform:
@@ -1446,6 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886e953998b14764c80e0f921589dd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMgr: {fileID: 1721501040}
 --- !u!1001 &1417209795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1947,6 +1957,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 68de972171bc4b34aa86417aa6d37570, type: 3}
     - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
+      propertyPath: gameMgr
+      value: 
+      objectReference: {fileID: 1721501040}
+    - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
       propertyPath: scoreCom
       value: 
       objectReference: {fileID: 278694436}
@@ -2331,8 +2345,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1721501041}
-  - component: {fileID: 1721501042}
   - component: {fileID: 1721501040}
+  - component: {fileID: 1721501042}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2353,8 +2367,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundGameClear: {fileID: 8300000, guid: 10f471cdbfbf5854eaa0f7719dd23a3d, type: 3}
-  mianBGM: {fileID: 1721501042}
+  mianBGM: {fileID: 1448810497}
   audioSource: {fileID: 1721501042}
+  killCount: 0
   clearGameUIObjects: {fileID: 1447757007}
   playingGameUIObjects: {fileID: 1327118207}
   playingGameObjects: {fileID: 962196621}
@@ -2390,8 +2405,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.02
+  m_PlayOnAwake: 1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
