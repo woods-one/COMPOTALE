@@ -22,6 +22,8 @@ public class GameMgr : MonoBehaviour
     
     private bool isCountZero = false;
     
+    public int killCount;
+    
     [SerializeField]
     private GameObject clearGameUIObjects;
     [SerializeField]
@@ -35,6 +37,9 @@ public class GameMgr : MonoBehaviour
 
     [SerializeField]
     private List<Enemy> characters;
+
+    [SerializeField]
+    private Score scoreCom;
 
     void Start()
     {
@@ -91,15 +96,6 @@ public class GameMgr : MonoBehaviour
             }
         }
     }
-    public void ClearRoot(int x, int y)
-    {
-       if(x == 0 && y == 0)SceneManager.LoadScene("Proot");
-       else if(x == 0 && 35 <= y)SceneManager.LoadScene("Troot");
-       else if(0 < x && 40 <= y)SceneManager.LoadScene("Groot");
-       else if(x == 0 && y < 35)SceneManager.LoadScene("Nroot");
-       else if(0 < x && y < 40 && y != 0)SceneManager.LoadScene("Croot");
-       else if(0 < x && y == 0)SceneManager.LoadScene("Broot");
-    }
     public void UserLogin(string usename)
     {
         PlayFabClientAPI.LoginWithCustomID(
@@ -115,7 +111,8 @@ public class GameMgr : MonoBehaviour
             }
         );
     }
-    public static void SubmitScore(int score)
+    
+    private void SubmitScore(int score)
     {
         PlayFabClientAPI.UpdatePlayerStatistics(
             new UpdatePlayerStatisticsRequest
@@ -139,6 +136,7 @@ public class GameMgr : MonoBehaviour
             }
         );
     }
+    
     void SetPlayerDisplayName (string displayName) 
     {
         PlayFabClientAPI.UpdateUserTitleDisplayName(
@@ -147,7 +145,8 @@ public class GameMgr : MonoBehaviour
             },
             result => {
                 Debug.Log("Set display name was succeeded");
-                SubmitScore(Enemy.score);
+                
+                SubmitScore(scoreCom.score.Value);
             },
             error => {
                 Debug.LogError(error.GenerateErrorReport());
