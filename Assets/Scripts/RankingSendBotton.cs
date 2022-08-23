@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class RankingSendBotton : MonoBehaviour
 {
+    [SerializeField]
     GameMgr gameMgr;
     public void OnClick()
     {
-        gameMgr = new GameMgr();
         if(InputFieldManager.isNotUserNameNull){
-            gameMgr.ClearRoot(RealCompota.shootCount, Enemy.killCount);
+            gameMgr.ClearRoot(RealCompota.shootCount, gameMgr.killCount);
             gameMgr.UserLogin(InputFieldManager.userName);
         }
     }

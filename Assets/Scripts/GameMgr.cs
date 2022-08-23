@@ -22,6 +22,8 @@ public class GameMgr : MonoBehaviour
     
     private bool isCountZero = false;
     
+    public int killCount;
+    
     [SerializeField]
     private GameObject clearGameUIObjects;
     [SerializeField]

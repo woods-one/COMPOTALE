@@ -16,15 +16,16 @@ public class Enemy : Token
     const int MaxSpeed = 15;
     const int MinSpeed = 1;
     const int DefaultSpeed = 7;
-    
-    public static int killCount;
-    
+
     [SerializeField]
     private AudioClip soundKillEnemy;
     
     [SerializeField]
-    AudioSource audioSource;
-    
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private GameMgr gameMgr;
+
     private bool isKillEnemy = false;
     private float speed;
     private float dir;//direction
@@ -46,7 +47,7 @@ public class Enemy : Token
     void Start()
     {
         scoreCom.score.Value = 0;
-        killCount = 0;
+        gameMgr.killCount = 0;
         
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
         dir = Random.Range(minDirRange, maxDirRange);
@@ -86,7 +87,7 @@ public class Enemy : Token
         else if(scrRandom < 15)scoreCom.score.Value += 40;
         else scoreCom.score.Value += 100;
         
-        killCount++;
+        gameMgr.killCount++;
         
         for (int i = 0; i < particleNum; i++)
         {
