@@ -9,12 +9,15 @@ public class RankingSendBotton : MonoBehaviour
 {
     [SerializeField]
     GameMgr gameMgr;
+
+    [SerializeField]
+    private InputFieldManager inputFieldManager;
     
     public void OnClick()
     {
-        if(InputFieldManager.isNotUserNameNull){
+        if(inputFieldManager.isNotUserNameNull){
             ClearRoot(RealCompota.shootCount, gameMgr.killCount);
-            gameMgr.UserLogin(InputFieldManager.userName);
+            gameMgr.UserLogin(inputFieldManager.userName);
         }
     }
     

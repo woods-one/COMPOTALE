@@ -856,7 +856,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -929,19 +928,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d67bb9a6aa3927542925cbdd69448a93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nickName: {fileID: 1144034539}
 --- !u!1 &601085467 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3313666281643933615, guid: 2291149154cacf243892a612824b40af, type: 3}
@@ -1024,6 +1010,7 @@ GameObject:
   - component: {fileID: 1144034541}
   - component: {fileID: 1144034540}
   - component: {fileID: 1144034539}
+  - component: {fileID: 1144034542}
   m_Layer: 5
   m_Name: NickName
   m_TagString: Untagged
@@ -1106,7 +1093,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420034}
+      - m_Target: {fileID: 1144034542}
         m_TargetAssemblyTypeName: InputFieldManager, Assembly-CSharp
         m_MethodName: GetInputName
         m_Mode: 1
@@ -1171,6 +1158,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144034537}
   m_CullTransparentMesh: 1
+--- !u!114 &1144034542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144034537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67bb9a6aa3927542925cbdd69448a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nickName: {fileID: 1144034539}
+  isNotUserNameNull: 0
+  userName: 
 --- !u!1 &1221855477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,6 +1458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMgr: {fileID: 1721501040}
+  inputFieldManager: {fileID: 1144034542}
 --- !u!1001 &1417209795
 PrefabInstance:
   m_ObjectHideFlags: 0
