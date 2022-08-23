@@ -16,6 +16,9 @@ public class RealCompota : Token
     AudioSource audioSource;
     bool isShootRealCompota;
 
+    [SerializeField]
+    private Score scoreCom;
+
 
     public static int shootCount;
 
@@ -57,10 +60,9 @@ public class RealCompota : Token
     /// </summary>
     public void OnMouseDown()
     {
-        Enemy.score -= 50;
+        scoreCom.score.Value -= 50;
         isShootRealCompota = true;
         shootCount++;
-        if(Enemy.score < 0)Enemy.score = 0;
         for (int i = 0; i < 32; i++)
         {
             Particle.Add(X, Y, 1);

@@ -36,6 +36,9 @@ public class GameMgr : MonoBehaviour
     [SerializeField]
     private List<Enemy> characters;
 
+    [SerializeField]
+    private Score scoreCom;
+
     void Start()
     {
         clearGameUIObjects.SetActive(false);
@@ -147,7 +150,8 @@ public class GameMgr : MonoBehaviour
             },
             result => {
                 Debug.Log("Set display name was succeeded");
-                SubmitScore(Enemy.score);
+                
+                SubmitScore(scoreCom.score.Value);
             },
             error => {
                 Debug.LogError(error.GenerateErrorReport());

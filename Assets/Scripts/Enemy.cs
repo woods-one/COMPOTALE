@@ -16,8 +16,7 @@ public class Enemy : Token
     const int MaxSpeed = 15;
     const int MinSpeed = 1;
     const int DefaultSpeed = 7;
-
-    public static int score;
+    
     public static int killCount;
     
     [SerializeField]
@@ -41,9 +40,12 @@ public class Enemy : Token
     private int minSpeedUPRandom = 0;
     private int maxSpeedUPRandom = 4;
 
+    [SerializeField]
+    private Score scoreCom;
+
     void Start()
     {
-        score = 0;
+        scoreCom.score.Value = 0;
         killCount = 0;
         
         SetSize(SpriteWidth / 2, SpriteHeight / 2);
@@ -78,11 +80,11 @@ public class Enemy : Token
         isKillEnemy = true;
         int scrRandom = Random.Range(minScrRange, maxScrRange);
         
-        if(scrRandom < 6)score += 10;
-        else if(scrRandom < 11)score += 20;
-        else if(scrRandom < 13)score += 30;
-        else if(scrRandom < 15)score += 40;
-        else score += 100;
+        if(scrRandom < 6)scoreCom.score.Value += 10;
+        else if(scrRandom < 11)scoreCom.score.Value += 20;
+        else if(scrRandom < 13)scoreCom.score.Value += 30;
+        else if(scrRandom < 15)scoreCom.score.Value += 40;
+        else scoreCom.score.Value += 100;
         
         killCount++;
         

@@ -416,6 +416,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
+      propertyPath: scoreCom
+      value: 
+      objectReference: {fileID: 278694436}
+    - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 63499088}
@@ -596,6 +600,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
+      propertyPath: scoreCom
+      value: 
+      objectReference: {fileID: 278694436}
+    - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 201750893}
@@ -681,8 +689,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6cad37e0540d64d92167aa6db1734a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 1706222654}
+  scoreText: {fileID: 1706222654}
   scoreDis: {fileID: 1442874851}
+  score:
+    value: 0
 --- !u!4 &278694437
 Transform:
   m_ObjectHideFlags: 0
@@ -943,6 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundKillEnemy: {fileID: 8300000, guid: 68de972171bc4b34aa86417aa6d37570, type: 3}
   audioSource: {fileID: 1417209796}
+  scoreCom: {fileID: 278694436}
 --- !u!4 &939594123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3313666281643933612, guid: 2291149154cacf243892a612824b40af, type: 3}
@@ -1673,7 +1684,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1448810498}
   - component: {fileID: 1448810497}
-  - component: {fileID: 1448810496}
   m_Layer: 0
   m_Name: MusicBox
   m_TagString: Untagged
@@ -1681,19 +1691,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1448810496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448810495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b496b164e37b469459ef544a3f55362c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mianBGM: {fileID: 1448810497}
 --- !u!82 &1448810497
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1950,6 +1947,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 68de972171bc4b34aa86417aa6d37570, type: 3}
     - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
+      propertyPath: scoreCom
+      value: 
+      objectReference: {fileID: 278694436}
+    - target: {fileID: 5315934630951657039, guid: 2291149154cacf243892a612824b40af, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1485158401}
@@ -2071,6 +2072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundShootRealCompota: {fileID: 8300000, guid: f0e3cdb8b8d72914c8371723358e1c4c, type: 3}
+  scoreCom: {fileID: 278694436}
 --- !u!50 &1523568757
 Rigidbody2D:
   serializedVersion: 4
@@ -2351,7 +2353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundGameClear: {fileID: 8300000, guid: 10f471cdbfbf5854eaa0f7719dd23a3d, type: 3}
-  mianBGM: {fileID: 0}
+  mianBGM: {fileID: 1721501042}
   audioSource: {fileID: 1721501042}
   clearGameUIObjects: {fileID: 1447757007}
   playingGameUIObjects: {fileID: 1327118207}
@@ -2362,6 +2364,7 @@ MonoBehaviour:
   - {fileID: 51522839}
   - {fileID: 986588514}
   - {fileID: 1343710732}
+  scoreCom: {fileID: 278694436}
 --- !u!4 &1721501041
 Transform:
   m_ObjectHideFlags: 0
